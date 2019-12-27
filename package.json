@@ -131,6 +131,10 @@
               "es": "Nombre de la varible donde guardar el path",
               "en": "Variable where save path:  "
             },
+            "help": {
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}"
+            },
             "id": "result",
             "css": "col-md-12"
           }
@@ -174,6 +178,10 @@
             "title": {
               "es": "Nombre de la varible donde guardar el path",
               "en": "Variable where save path:  "
+            },
+            "help": {
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}"
             },
             "id": "result",
             "css": "col-md-12"
