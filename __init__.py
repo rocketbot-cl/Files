@@ -212,3 +212,15 @@ if module == "getFolder":
     except Exception as e:
         PrintExcetion()
         raise e
+
+if module == "readFile":
+    file_ = GetParams('file_')
+    var_ = GetParams('var_')
+
+    try:
+        with open(file_, 'r') as f:
+            output = f.read()
+        SetVar(var_, output)
+    except Exception as e:
+        PrintException()
+        raise e
