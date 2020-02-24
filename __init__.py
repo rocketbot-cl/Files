@@ -218,8 +218,9 @@ if module == "readFile":
     var_ = GetParams('var_')
 
     try:
-        with open(file_, 'r') as f:
+        with open(file_, 'r', encoding="utf-8") as f:
             output = f.read()
+            print('TEXT',output)
         SetVar(var_, output)
     except Exception as e:
         PrintException()
