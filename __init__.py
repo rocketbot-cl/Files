@@ -25,6 +25,7 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 """
 
 import sys
+import time
 import os
 import subprocess
 import tkinter as tk
@@ -238,7 +239,7 @@ if module == "readFile":
             output = f.read()
             print('TEXT',output)
         SetVar(var_, output)
-        
+
     except Exception as e:
         PrintException()
         raise e
