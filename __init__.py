@@ -30,6 +30,9 @@ import subprocess
 import tkinter as tk
 from tkinter import filedialog
 import shutil
+import subprocess
+import tkinter as tk
+from tkinter import filedialog
 
 """
     Obtengo el modulo que fueron invocados
@@ -139,15 +142,14 @@ Function SelectFolder( myStartFolder )
     On Error Goto 0
 End Function"""
             with open("tmp.vbs", "w") as f:
+                print(scr)
                 f.write(scr)
                 f.close()
                 con = subprocess.Popen('cscript tmp.vbs //Nologo', shell=True, stdout=subprocess.PIPE,
                                        stderr=subprocess.PIPE)
                 a = con.communicate()
                 print("> ",a)
-                print("file")
-                file_path = str(a[0].decode('latin-1')).replace("\\", "/")
-                print("file")
+                file_path = str(a[0].decode()).replace("\\", "/")
         else:
             root = tk.Tk()
             root.title("Rocketbot - Seleccione una carpeta")
@@ -163,9 +165,9 @@ End Function"""
             root.geometry("300x0+%d+%d" % (x, y))
             root.update()
             file_path = filedialog.askdirectory(parent=root, title='Rocketbot - Seleccione una carpeta')
-
             root.destroy()
             time.sleep(1)
+
     except Exception as e:
         print(e)
 
@@ -223,6 +225,19 @@ if module == "delete":
     try:
         shutil.rmtree(path, ignore_errors=False)
         # os.rmdir(path)
+    except Exception as e:
+        PrintException()
+        raise e
+        
+if module == "readFile":
+    file_ = GetParams('file_')
+    var_ = GetParams('var_')
+
+    try:
+        with open(file_, 'r', encoding="utf-8") as f:
+            output = f.read()
+            print('TEXT',output)
+        SetVar(var_, output)
         
     except Exception as e:
         PrintException()
