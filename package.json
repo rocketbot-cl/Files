@@ -1,8 +1,8 @@
 {
-  "author": "Danilo Toro - Rocketbot - <danilo.toro@rocketbot.cl>",
+  "author": "Danilo Toro - Rocketbot - <danilo.toro@rocketbot.cl> - Marcela Vergara - <marcela@rocketbot.cl>",
   "description": "Módulo para el manejo de archivos",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "0.4",
+  "version": "0.5",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "linux": false,
@@ -305,6 +305,55 @@
       "windows": true,
       "mac": false,
       "docker": false
-    }
+    },
+    {
+            "en": {
+                "title": "Create Folder",
+                "description": "Enter the path with name where you want to create the folder",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Crear Carpeta",
+                "description": "Ingrese la ruta y nombre donde quiere crear la carpeta",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "C:/Users/User/Desktop/folder_test",
+                            "en": "C:/Users/User/Desktop/folder_test"
+                        },
+                        "title": {
+                            "es": "Ruta y nombre de carpeta:",
+                            "en": "File path"
+                        },
+                        "help": {
+                            "es": "Si la ruta no existe creará todas las carpetas",
+                            "en": "f the path doesn't exist it will create all folders"
+                        },
+                        "id": "path",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "aMV6cXPMMSo",
+            "icon": "data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ0OC40NTcgNDQ4LjQ1NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ4LjQ1NyA0NDguNDU3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzAwQkJEMzsiIGQ9Ik0zMjguNzE4LDc1LjU5MmgzMS4zNDdsMCwwbDYuNzkyLTQxLjI3M2MxLjA0NS02LjI2OS0xLjA0NS0xMi41MzktNC43MDItMTYuNzE4ICBjLTQuMTgtNC43MDItOS45MjctNy4zMTQtMTUuNjczLTcuMzE0SDEwMi40OThjLTYuMjY5LDAtMTIuMDE2LDIuNjEyLTE1LjY3Myw3LjMxNGMtNC4xOCw0LjcwMi01Ljc0NywxMC45NzEtNC43MDIsMTYuNzE4ICBsNi43OTIsNDEuMjczaDMxLjM0N0gzMjguNzE4eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRDRFMUY0OyIgZD0iTTQwNy4wODYsMTM5LjMzMWw2Ljc5Mi00Mi4zMThjMS4wNDUtNi4yNjktMS4wNDUtMTIuNTM5LTQuNzAyLTE2LjcxOCAgYy00LjE4LTQuNzAyLTkuOTI3LTcuMzE0LTE1LjY3My03LjMxNGgtMzMuNDM3bDAsMGgtMzEuMzQ3SDEyMC4yNjFIODguOTE0aC0wLjUyMkg1NmMtNi4yNjksMC0xMi4wMTYsMi42MTItMTUuNjczLDcuMzE0ICBjLTQuMTgsNC43MDItNS43NDcsMTAuOTcxLTQuNzAyLDE2LjcxOGw2Ljc5Miw0Mi4zMThINDA3LjA4Nkw0MDcuMDg2LDEzOS4zMzF6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiM0RENGRTA7IiBkPSJNNDQzLjY1NywxNDQuMDMzYy00LjE4LTQuNzAyLTkuOTI3LTcuMzE0LTE2LjE5Ni03LjMxNGgtMjAuMzc1bDAsMEg0Mi40MTZoLTAuNTIySDIwLjk5NiAgYy02LjI2OSwwLTEyLjAxNiwyLjYxMi0xNi4xOTYsNy4zMTRjLTMuNjU3LDQuMTgtNS4yMjQsOS45MjctNC43MDIsMTUuNjczbDI0LjAzMywyNTAuMjUzdjAuNTIyICBjMi4wOSwxNS42NzMsMTUuNjczLDI3LjY5LDMxLjM0NywyNy42OUgzOTIuOThjMTYuNzE4LDAsMzAuMzAyLTEyLjUzOSwzMS4zNDctMjguMjEybDI0LjAzMy0yNTAuMjUzICBDNDQ4Ljg4MiwxNTQuNDgyLDQ0Ny4zMTQsMTQ4LjczNSw0NDMuNjU3LDE0NC4wMzN6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiMwMEJCRDM7IiBkPSJNMjkwLjA1NywyMzUuNDYxSDE1OC40Yy04Ljg4MiwwLTE1LjY3Myw2Ljc5Mi0xNS42NzMsMTUuNjczYzAsOC44ODIsNi43OTIsMTUuNjczLDE1LjY3MywxNS42NzMgIGgxMzEuNjU3YzguODgyLDAsMTUuNjczLTYuNzkyLDE1LjY3My0xNS42NzNDMzA1LjczMSwyNDIuMjUzLDI5OC45MzksMjM1LjQ2MSwyOTAuMDU3LDIzNS40NjF6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=",
+            "module": "createFolder",
+            "module_name": "Files",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux": true,
+            "windows": true,
+            "mac": true,
+            "docker": true
+        }
   ]
 }

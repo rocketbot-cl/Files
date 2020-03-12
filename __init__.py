@@ -243,3 +243,13 @@ if module == "readFile":
     except Exception as e:
         PrintException()
         raise e
+
+
+if module == "createFolder":
+
+    folder = GetParams('path')
+
+    try:
+         os.stat(folder)
+    except:
+         os.makedirs(folder)
