@@ -253,3 +253,16 @@ if module == "createFolder":
          os.stat(folder)
     except:
          os.makedirs(folder)
+
+if module == "exists":
+    path  = GetParams("path")
+    result = GetParams("var_")
+
+    try:
+        exist = os.path.exists(path)
+
+        if result:
+            SetVar(result, exist)
+    except Exception as e:
+        PrintException()
+        raise e
