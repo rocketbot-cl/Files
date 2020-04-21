@@ -27,13 +27,10 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 import sys
 import time
 import os
-import subprocess
-import tkinter as tk
-from tkinter import filedialog
+from pathlib import Path
 import shutil
 import subprocess
-import tkinter as tk
-from tkinter import filedialog
+
 
 """
     Obtengo el modulo que fueron invocados
@@ -263,6 +260,28 @@ if module == "exists":
 
         if result:
             SetVar(result, exist)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "listFiles":
+    path = GetParams("path")
+    var_ = GetParams("result")
+    option = GetParams("option")
+
+    def ext(x):
+        return os.path.splitext(x)[::-1]
+    try:
+        if option == "date":
+            files = sorted(Path(path).iterdir(), key=os.path.getmtime)
+            paths = [file.name for file in files]
+        elif option == "type":
+            files = sorted(Path(path).iterdir(), key=ext)
+            paths = [file.name for file in files]
+        else:
+            paths = os.listdir(path)
+
+        SetVar(var_, paths)
     except Exception as e:
         PrintException()
         raise e
