@@ -1,6 +1,19 @@
 # Files
 Module for handling files and folders
 
+## Commands
+<ul id="commands_readme">
+    <li>Open Folder</li>
+    <li>Open File</li>
+    <li>Get File</li>
+    <li>Get Folder</li>
+    <li>Read File</li>
+    <li>Delete Folder</li>
+    <li>Create Folder</li>
+    <li>Check existence</li>
+    <li>List sorted files</li>
+</ul>
+
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Files/master/example/files.png)
 
 <h2>License</h2>
