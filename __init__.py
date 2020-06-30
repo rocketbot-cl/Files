@@ -30,6 +30,7 @@ import os
 from pathlib import Path
 import shutil
 import subprocess
+import glob
 
 
 """
@@ -226,7 +227,18 @@ if module == "delete":
     except Exception as e:
         PrintException()
         raise e
-        
+
+if module == "deleteFile":
+    path = GetParams('path')
+    name = GetParams('name')
+
+    try:
+        for zippath in glob.iglob(os.path.join(path, name)):
+            os.remove(zippath)
+    except Exception as e:
+        PrintException()
+        raise e
+
 if module == "readFile":
     file_ = GetParams('file_')
     var_ = GetParams('var_')
