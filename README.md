@@ -9,6 +9,7 @@ Module for handling files and folders
     <li>Get Folder</li>
     <li>Read File</li>
     <li>Delete Folder</li>
+    <li>Delete File</li>
     <li>Create Folder</li>
     <li>Check existence</li>
     <li>List sorted files</li>
