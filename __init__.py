@@ -195,7 +195,7 @@ if module == "openFile":
         path = os.path.realpath(path)
         os.startfile(path)
     except Exception as e:
-        PrintExcept()
+        PrintException()
         raise e
 
 if module == "getFile":
@@ -215,7 +215,7 @@ if module == "getFolder":
         path = get_folder()
         SetVar(result, path)
     except Exception as e:
-        PrintExcetion()
+        PrintException()
         raise e
 
 if module == "delete":
