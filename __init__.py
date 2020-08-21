@@ -192,8 +192,11 @@ if module == "openFile":
     path = GetParams("path")
 
     try:
-        path = os.path.realpath(path)
-        os.startfile(path)
+        if sys.platform == 'darwin' or sys.platform == 'linux':
+            subprocess.call(["open", path])
+        else:
+            path = os.path.realpath(path)
+            os.startfile(path)
     except Exception as e:
         PrintException()
         raise e
