@@ -300,3 +300,32 @@ if module == "listFiles":
     except Exception as e:
         PrintException()
         raise e
+
+
+if module == "search_match":
+
+    path = GetParams('path')
+    ext_ = GetParams('ext_')
+    match = GetParams('match')
+    result_ = GetParams('result_')
+
+    try:
+        list_ext = []
+
+        if ext_:
+            for file in os.listdir(path):
+                if file.endswith(ext_):
+                    list_ext.append(file)
+        else:
+            list_ext = list_ext = os.listdir(path)
+
+        res = []
+        for ele in list_ext:
+            if match in ele:
+                res.append(ele)
+
+        SetVar(result_, res)
+
+    except Exception as e:
+       PrintException()
+       raise e
