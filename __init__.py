@@ -79,7 +79,7 @@ def getfile():
         root.update()
         file_path = filedialog.askopenfilename(parent=root, title='Rocketbot - Seleccione un archivo')
         root.destroy()
-        time.sleep(1)
+        sleep(1)
     return file_path
 
 
