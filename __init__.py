@@ -244,12 +244,18 @@ if module == "deleteFile":
 
 if module == "readFile":
     file_ = GetParams('file_')
+    split = GetParams("split")
     var_ = GetParams('var_')
 
     try:
-        with open(file_, 'r', encoding="utf-8") as f:
-            output = f.read()
-            print('TEXT',output)
+        if split is not None:
+            split = eval(split)
+        with open(file_, 'r', encoding="latin-1") as f:
+            if split:
+                output = f.readlines()
+            else:
+                output = f.read()
+            
         SetVar(var_, output)
 
     except Exception as e:
