@@ -289,6 +289,8 @@ if module == "renameFolder":
 
     # Just tested in Linux
     # After test in Windows, change the json data for compatibility
+    # Problem in Windows: Do not split well. Uses '/' and not '\'. So, cannot split it with so.sep
+    # Dunno why. Investigate
 
     # It take the path where the folder is contain
     path = GetParams('path')
