@@ -7,6 +7,7 @@ Module for handling files and folders
     <li>Open File</li>
     <li>Get File</li>
     <li>Get Folder</li>
+    <li>Rename Folder</li>
     <li>Read File</li>
     <li>Delete Folder</li>
     <li>Delete File</li>
