@@ -185,16 +185,6 @@
             },
             "id": "result",
             "css": "col-md-12"
-          },
-          {
-            "type": "input",
-            "placeholder": "this is a placeholder",
-            "title": {
-              "en": "Enter the new name of the folder:",
-              "es": "Ingrese el nuevo nombre de la carpeta:"
-            },
-            "id": "input_1",
-            "css": "col-md-6"
           }
         ]
       },
@@ -242,7 +232,10 @@
           },
           {
             "type": "input",
-            "placeholder": "Nombre actual ",
+            "placeholder": {
+                "es": "Nombre actual",
+                "en": "Actual name"
+              },
             "title": {
               "en": "Actual name of the folder:",
               "es": "Nombre actual de la carpeta:"
@@ -252,7 +245,10 @@
           },
           {
             "type": "input",
-            "placeholder": "Nuevo nombre",
+            "placeholder": {
+                "es": "Nuevo nombre",
+                "en": "New name"
+              },
             "title": {
               "en": "New name of the folder:",
               "es": "Nuevo nombre de la carpeta:"
