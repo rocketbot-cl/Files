@@ -204,13 +204,13 @@
     {
       "es": {
         "title": "Renombrar carpeta",
-        "description": "Pide al usuario seleccionar una carpeta",
+        "description": "Pide al usuario seleccionar una carpeta para cambiarle el nombre",
         "title_options": null,
         "options": null
       },
       "en": {
         "title": "Rename folder",
-        "description": "Ask the user to select a folder",
+        "description": "Ask the user to select a folder to rename it",
         "title_options": null,
         "options": null
       },
@@ -220,8 +220,8 @@
           {
             "type": "folder_select",
             "placeholder": {
-              "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "es": "C:/User/Folder/",
+              "en": "C:/User/Folder/"
             },
             "title": {
               "es": "Ruta de la carpeta a cambiar: ",
@@ -253,8 +253,8 @@
       "options": false,
       "father": "module",
       "group": "scripts",
-      "linux": false,
-      "windows": true,
+      "linux": true,
+      "windows": false,
       "mac": false,
       "docker": false
     },
