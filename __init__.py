@@ -287,17 +287,27 @@ if module == "exists":
 
 if module == "renameFolder":
 
-    path = GetParams('path')
-    oldFoldersName = GetParams('oldFoldersName')
-    newFoldersName = GetParams('newFoldersName')
-
     # Should not do this.
     # I think I can do some string manipulation for better result
     # So the client can understand better and for less error.
 
+    # It would not pass test, I can assure that.
+    # Should verify stuff before?
+
+    # It take the path where the folder is contain
+    path = GetParams('path')
+
+    #Obtain form user old and new folder's name
+    oldFoldersName = GetParams('oldFoldersName')
+
+    newFoldersName = GetParams('newFoldersName')
+
     try:
+        #Change to the path where the folder is contain
         os.chdir(path)
+        # Method to rename the folder
         os.rename(oldFoldersName, newFoldersName)
+
     except Exception as e:
         PrintException()
         raise e
