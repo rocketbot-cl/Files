@@ -285,6 +285,19 @@ if module == "exists":
         PrintException()
         raise e
 
+if module == "renameFolder":
+
+    path = GetParams('path')
+    oldFoldersName = GetParams('oldFoldersName')
+    newFoldersName = GetParams('newFoldersName')
+
+    try:
+        os.chdir(path)
+        os.rename(oldFoldersName, newFoldersName)
+    except Exception as e:
+        PrintException()
+        raise e
+
 if module == "listFiles":
     path = GetParams("path")
     var_ = GetParams("result")
