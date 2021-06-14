@@ -291,6 +291,10 @@ if module == "renameFolder":
     oldFoldersName = GetParams('oldFoldersName')
     newFoldersName = GetParams('newFoldersName')
 
+    # Should not do this.
+    # I think I can do some string manipulation for better result
+    # So the client can understand better and for less error.
+
     try:
         os.chdir(path)
         os.rename(oldFoldersName, newFoldersName)

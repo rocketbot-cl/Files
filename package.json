@@ -235,7 +235,7 @@
             },
             "title": {
               "es": "Ruta de la carpeta que contiene la carpeta a renombrar: ",
-              "en": "Path to where the folder you want to change it is contain:  "
+              "en": "Path where the folder you want to change it is contain:  "
             },
             "id": "path",
             "css": "col-md-12"
