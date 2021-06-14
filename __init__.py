@@ -287,26 +287,30 @@ if module == "exists":
 
 if module == "renameFolder":
 
-    # Should not do this.
-    # I think I can do some string manipulation for better result
-    # So the client can understand better and for less error.
-
-    # It would not pass test, I can assure that.
-    # Should verify stuff before?
+    # Just tested in Linux
+    # After test in Windows, change the json data for compatibility
 
     # It take the path where the folder is contain
     path = GetParams('path')
 
-    #Obtain form user old and new folder's name
-    oldFoldersName = GetParams('oldFoldersName')
+    #It gets splited
+    pathSplited = path.split(os.sep)
 
+    # Gets the new folder's name
     newFoldersName = GetParams('newFoldersName')
 
+    # Change the last item of the array (path splited) and in the last position, replace the old name with the new one
+    pathSplited[(len(pathSplited)-1)] = newFoldersName
+
+    # It gets join into one path
+    pathWithNewFolder = os.sep.join(pathSplited)
+
     try:
-        #Change to the path where the folder is contain
-        os.chdir(path)
+
+        #os.chdir(path) Rompe rockect :S
+        
         # Method to rename the folder
-        os.rename(oldFoldersName, newFoldersName)
+        os.rename(path, pathWithNewFolder)
 
     except Exception as e:
         PrintException()

@@ -224,24 +224,11 @@
               "en": "C:/User/Usuario/Folder/"
             },
             "title": {
-              "es": "Ruta de la carpeta que contiene la carpeta a renombrar: ",
-              "en": "Path where the folder you want to change it is contain:  "
+              "es": "Ruta de la carpeta a cambiar: ",
+              "en": "Path of the folder to change:  "
             },
             "id": "path",
             "css": "col-md-12"
-          },
-          {
-            "type": "input",
-            "placeholder": {
-                "es": "Nombre actual",
-                "en": "Actual name"
-              },
-            "title": {
-              "en": "Actual name of the folder:",
-              "es": "Nombre actual de la carpeta:"
-            },
-            "id": "oldFoldersName",
-            "css": "col-md-6"
           },
           {
             "type": "input",
