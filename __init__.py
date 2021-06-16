@@ -291,12 +291,18 @@ if module == "renameFolder":
     # After test in Windows, change the json data for compatibility
     # Problem in Windows: Do not split well. Uses '/' and not '\'. So, cannot split it with so.sep
     # Dunno why. Investigate
+    
+    ## Tested in Windows, it works well. See comments for more information about separation
 
     # It take the path where the folder is contain
     path = GetParams('path')
 
     #It gets splited
-    pathSplited = path.split(os.sep)
+    # Use os.sep [change separator for os.sep ( e.g.: pathSplited = path.slpit(separator) => pathSpliter = path.split(os.sep))] only if does not take from choosing the folder
+    # because choosing the folder it gets in linux os.sep ('/'). It uses python, so, it gets that way.
+    # pathSplited = path.split(os.sep)
+    separator = "/"
+    pathSplited = path.split(separator)
 
     # Gets the new folder's name
     newFoldersName = GetParams('newFoldersName')
@@ -305,7 +311,7 @@ if module == "renameFolder":
     pathSplited[(len(pathSplited)-1)] = newFoldersName
 
     # It gets join into one path
-    pathWithNewFolder = os.sep.join(pathSplited)
+    pathWithNewFolder = separator.join(pathSplited)
 
     try:
 
