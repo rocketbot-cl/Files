@@ -20,7 +20,7 @@
     {
       "es": {
         "title": "Abrir carpeta",
-        "description": "Abre la carpeta contenedora de un archivo dado ",
+        "description": "Abre la carpeta contenedora de un archivo",
         "title_options": null,
         "options": null
       },
@@ -30,18 +30,31 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Abrir Pasta",
+        "description": "Abra a pasta que contém um arquivo",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
           {
             "type": "folder_select",
+            "description": {
+              "es": "Abre la carpeta de la ruta especificada",
+              "en": "Open the folder from the specified path",
+              "pr": "Abra o tapete de rota especificado"
+            },
             "placeholder": {
               "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "en": "C:/User/Usuario/Folder/",
+              "pr": "C:/User/Usuario/Pasta/"
             },
             "title": {
               "es": "Ruta de la carpeta: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção da pasta"
             },
             "id": "path",
             "css": "col-md-12"
@@ -74,6 +87,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Abrir Arquivo",
+        "description": "Abre um arquivo ",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -81,11 +100,23 @@
             "type": "file_select",
             "placeholder": {
               "es": "C:/User/Usuario/Folder/File.extension",
-              "en": "C:/User/Usuario/Folder/File.extension"
+              "en": "C:/User/Usuario/Folder/File.extension",
+              "pr": "C:/User/Usuario/Folder/File.extension"
             },
+            "description":{
+              "es": "Abre el archivo de la ruta especificada",
+              "en": "Open the file from the specified path",
+              "pr": "Abra o arquivo do direção especificado"
+              },
+              "help":{
+                "es": "*Obligatorio*",
+                "en": "*Mandatory*",
+                "pr": "*Obrigatoriedade*"
+              },
             "title": {
               "es": "Ruta del archivo: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção do arquivo"
             },
             "id": "path",
             "css": "col-md-12"
@@ -118,6 +149,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Selecione o arquivo",
+        "description": "Peça ao usuário para selecionar um arquivo",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -127,13 +164,20 @@
               "es": "Result",
               "en": "Result"
             },
+            "description":{
+              "es": "Al ejecutarlo se abre el explorador de archivos para que podamos seleccionar el archivo, una vez seleccionado nos devuelve la dirección donde se encuentra",
+              "en": "When you execute it, or the file explorer opens so that we can select the file, once selected, it provides us with or direct where it is located.",
+              "pr": "Ao executá-lo, o explorador de arquivos se abre para que possamos selecionar o arquivo, uma vez selecionado, ele nos fornece o endereço onde está localizado."
+            },
             "title": {
               "es": "Nombre de la varible donde guardar el path",
-              "en": "Variable where save path:  "
+              "en": "Variable where save path:  ",
+              "pr": "Nome da variável onde salvar o caminho"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
             },
             "id": "result",
             "css": "col-md-12"
@@ -166,6 +210,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Selecionar Pasta",
+        "description": "Peça ao usuário para selecionar uma pasta",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -173,15 +223,23 @@
             "type": "input",
             "placeholder": {
               "es": "Result",
-              "en": "Result"
+              "en": "Result",
+              "pr": "Result"
+            },
+            "description":{
+              "es": "Al ejecutarse se abre el explorador de archivos para que seleccionemos la carpeta que deseemos, una vez seleccionado nos devuelve la ruta donde se aloja",
+              "en": "When executed, the file explorer opens so that we can select the folder we want, once selected, it returns the path where it is located",
+              "pr": "Quando executado, o explorador de arquivos abre para que possamos selecionar a pasta que desejamos, uma vez selecionada, retorna o caminho onde está localizada"
             },
             "title": {
               "es": "Nombre de la varible donde guardar el path",
-              "en": "Variable where save path:  "
+              "en": "Variable where save path:  ",
+              "pr": "Nome da variável onde salvar o caminho"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
             },
             "id": "result",
             "css": "col-md-12"
@@ -214,6 +272,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Renomear pasta",
+        "description": "Pede ao usuário para selecionar uma pasta para renomear",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -221,11 +285,18 @@
             "type": "folder_select",
             "placeholder": {
               "es": "C:/User/Folder/",
-              "en": "C:/User/Folder/"
+              "en": "C:/User/Folder/",
+              "pr": "C:/User/Folder/"
+            },
+            "description":{
+              "es": "Al ejecutar se renombra la carpeta que hayamos especificado",
+              "en": "When executing, the folder that we have specified is renamed",
+              "pr": "Ao executar, a pasta que especificamos é renomeada"
             },
             "title": {
-              "es": "Ruta de la carpeta a cambiar: ",
-              "en": "Path of the folder to change:  "
+              "es": "Direção da pasta a renomear: ",
+              "en": "Path of the folder to rename:  ",
+              "pr": "Direção da pasta a cambiar"
             },
             "id": "path",
             "css": "col-md-12"
@@ -234,11 +305,13 @@
             "type": "input",
             "placeholder": {
                 "es": "Nuevo nombre",
-                "en": "New name"
+                "en": "New name",
+                "pr": "Nuevo nome"
               },
             "title": {
               "en": "New name of the folder:",
-              "es": "Nuevo nombre de la carpeta:"
+              "es": "Nuevo nombre de la carpeta:",
+              "pr": "Nuevo nome da pasta"
             },
             "id": "newFoldersName",
             "css": "col-md-6"
@@ -271,6 +344,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Ler arquivo",
+        "description": "Ler um arquivo e salvar seu conteúdo em uma variável",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -278,11 +357,13 @@
             "type": "file_select",
             "placeholder": {
               "es": "C:/Users/User/Desktop/file.txt",
-              "en": "C:/Users/User/Desktop/file.txt"
+              "en": "C:/Users/User/Desktop/file.txt",
+              "pr": "C:/Users/User/Desktop/file.txt"
             },
             "title": {
               "es": "Ruta de archivo",
-              "en": "File path"
+              "en": "File path",
+              "pr": "Direção do arquivo"
             },
             "id": "file_",
             "css": "col-md-12"
@@ -293,9 +374,15 @@
               "es": "",
               "en": ""
             },
+            "description": {
+              "es": "Devuelve el contenido de un archivo y lo almacena en una varibale, si se tilda la opcion separar lineas devuelve el contenido del archivo dentro de una lista y cada linea es un elemento dentro de la lista",
+              "en": "Returns the content of a file and stores it in a variable, if the separate lines option is checked, it returns the content of the file within a list and each line is an element within the list",
+              "pr": "Retorna o conteúdo de um arquivo e armazena em uma variável, se a opção linhas separadas estiver marcada, retorna o conteúdo do arquivo dentro de uma lista e cada linha é um elemento dentro da lista"
+            },
             "title": {
               "es": "Separar cada línea",
-              "en": "Separate lines"
+              "en": "Separate lines",
+              "pr": "Separar cada linha"
             },
             "options": [
             ],
@@ -306,15 +393,23 @@
             "type": "input",
             "placeholder": {
               "es": "Variable",
-              "en": "Variable"
+              "en": "Variable",
+              "pr": "Varibel"
+            },
+            "description": {
+              "es": "Variable donde se almacenara el valor obtenido",
+              "en": "Variable where the obtained value will be stored",
+              "pr": "Variável onde o valor obtido será armazenado"
             },
             "title": {
               "es": "Asignar resultado a variable",
-              "en": "Assign result to variable"
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves {}"
             },
             "id": "var_",
             "css": "col-md-6"
@@ -347,6 +442,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Elimina una carpeta",
+        "description": "Excluir uma pasta",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -354,11 +455,18 @@
             "type": "folder_select",
             "placeholder": {
               "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "en": "C:/User/Usuario/Folder/",
+              "pr": "C:/User/Usuario/Folder/"
+            },
+            "description":{
+              "es": "Selecciona la ruta de la carpeta a eliminar", 
+              "en": "Slect path of the folder to delete",
+              "pr": "Seleciona a direção da pasta que deseja remover"
             },
             "title": {
               "es": "Ruta de la carpeta: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção da pasta"
             },
             "id": "path",
             "css": "col-md-12"
@@ -391,6 +499,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Excluir um arquivo",
+        "description": "Excluir um arquivo indicando sua extensão e seu nome ou parte do nome",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -398,11 +512,18 @@
             "type": "folder_select",
             "placeholder": {
               "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "en": "C:/User/Usuario/Folder/",
+              "pr": "C:/User/Usuario/Folder/"
+            },
+            "description":{
+              "es":"Ruta del archivo a eliminar",
+              "en":"Path of the file to delete",
+              "pr":"Direção do arquivo a ser removido"
             },
             "title": {
               "es": "Ruta de la carpeta: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção da pasta"
             },
             "id": "path",
             "css": "col-md-12"
@@ -411,11 +532,18 @@
             "type": "input",
             "placeholder": {
               "es": "nombre*.pdf",
-              "en": "name*.pdf"
+              "en": "name*.pdf",
+              "pr": "nome*.pdf"
+            },
+            "description":{
+              "es": "Nombre y extension del archivo a eliminar",
+              "en": "Name and extension of the file to delete",
+              "pr": "Nome e extension do arquivo a ser removido"
             },
             "title": {
               "es": "Tipo de archivo a eliminar:",
-              "en": "Type of file to delete:"
+              "en": "Type of file to delete:",
+              "pr": "Tipo do arquivo a eliminar"
             },
             "id": "name",
             "css": "col-md-12"
@@ -448,6 +576,12 @@
         "title_options": "Seleccione una opción",
         "options": null
       },
+      "pr": {
+        "title": "Criar Pasta",
+        "description": "Digite a direção e o nome onde você deseja criar a pasta",
+        "title_options": "Selecione una opcaon",
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -455,15 +589,23 @@
             "type": "input",
             "placeholder": {
               "es": "C:/Users/User/Desktop/folder_test",
-              "en": "C:/Users/User/Desktop/folder_test"
+              "en": "C:/Users/User/Desktop/folder_test",
+              "pr": "C:/Users/User/Desktop/folder_test"
+            },
+            "description": {
+              "es": "Ruta donde se creara la carpeta",
+              "en": "Path where folder are be created",
+              "pr": "Direção onde se creara à pasta"
             },
             "title": {
               "es": "Ruta y nombre de carpeta:",
-              "en": "File path"
+              "en": "File path",
+              "pr": "Direção e nome da pasta"
             },
             "help": {
               "es": "Si la ruta no existe creará todas las carpetas",
-              "en": "f the path doesn't exist it will create all folders"
+              "en": "If the path doesn't exist it will create all folders",
+              "pr": "Se a direção não existe criar todas as pastas"
             },
             "id": "path",
             "css": "col-md-12"
@@ -496,6 +638,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Provar a existência",
+        "description": "Verifique se existe um arquivo ou pasta",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -503,11 +651,18 @@
             "type": "folder_select",
             "placeholder": {
               "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "en": "C:/User/Usuario/Folder/",
+              "pr": "C:/User/Usuario/Folder/"
+            },
+            "description": {
+              "es": "Direccion de la carpeta a la que se desea comprobar la existencia",
+              "en": "Address of the folder you want to check for existence",
+              "pr": "Direção da pasta que você deseja verificar a existência"
             },
             "title": {
               "es": "Ruta de la carpeta: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção da pasta"
             },
             "id": "path",
             "css": "col-md-12"
@@ -520,11 +675,13 @@
             },
             "title": {
               "es": "Asignar resultado a variable",
-              "en": "Assign result to variable"
+              "en": "Assign result to variable",
+              "pr": "Asignar resultado a variable"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
             },
             "id": "var_",
             "css": "col-md-12"
@@ -557,6 +714,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Listar arquivos ordenados",
+        "description": "Listar archivos y selecciona el orden",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -564,11 +727,18 @@
             "type": "folder_select",
             "placeholder": {
               "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "en": "C:/User/Usuario/Folder/",
+              "pr": "C:/User/Usuario/Folder/"
+            },
+            "description": {
+              "es": "Direccion de la carpeta de la cual se quiere listar los archivos",
+              "en": "Path of the folder from which you want to list the files",
+              "pr": "Direção da pasta da qual se deseja listar os arquivos"
             },
             "title": {
               "es": "Ruta de la carpeta: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção da pasta"
             },
             "id": "path",
             "css": "col-md-12"
@@ -577,11 +747,18 @@
             "type": "select",
             "placeholder": {
               "es": "",
-              "en": ""
+              "en": "",
+              "pr": ""
+            },
+            "description": {
+              "es": "Opciones para ordenar, Nombre, Fecha y Tipo",
+              "en": "Options to order, Name, Date and Type",
+              "pr": "Opções para encomendar, Nome, Data e Tipo"
             },
             "title": {
               "es": "Ordenar por: ",
-              "en": "Sort by"
+              "en": "Sort by",
+              "pr": "Organizar por"
             },
             "options": [
               {
@@ -604,15 +781,23 @@
             "type": "input",
             "placeholder": {
               "es": "Variable",
-              "en": "Variable"
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "description": {
+              "es": "Variable donde se almacena la lista de elementos de la carpeta",
+              "en": "Variable where the list of items in the folder is stored",
+              "pr": "Variável onde a lista de itens da pasta está armazenada"
             },
             "title": {
               "es": "Asignar resultado a variable",
-              "en": "Assign result to variable"
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
             },
             "id": "result",
             "css": "col-md-6"
@@ -645,6 +830,12 @@
         "title_options": null,
         "options": null
       },
+      "pr": {
+        "title": "Achar arquivo",
+        "description": "Retorna uma lista com correspondências",
+        "title_options": null,
+        "options": null
+      },
       "form": {
         "css": "modal-lg",
         "inputs": [
@@ -652,11 +843,18 @@
             "type": "folder_select",
             "placeholder": {
               "es": "C:/User/Usuario/Folder/",
-              "en": "C:/User/Usuario/Folder/"
+              "en": "C:/User/Usuario/Folder/",
+              "pr": "C:/User/Usuario/Folder/"
+            },
+            "description":{
+              "es": "Direccion donde se buscara el archivo",
+              "en": "Address where the file will be searched",
+              "pr": "Direção onde o arquivo será pesquisado"
             },
             "title": {
               "es": "Ruta de la carpeta: ",
-              "en": "File path:  "
+              "en": "File path:  ",
+              "pr": "Direção da pasta"
             },
             "id": "path",
             "css": "col-md-12"
@@ -667,13 +865,20 @@
               "es": ".pdf",
               "en": ".pdf"
             },
+            "description":{
+              "es": "Filtra por extension buscando asi todos los archivos con la extension especificada",
+              "en": "Filter by extension looking for all files with the specified extension",
+              "pr": "Filtre por extensão procurando todos os arquivos com a extensão especificada"
+            },
             "title": {
               "es": "Filtrar por extensión",
-              "en": "Filter by extension"
+              "en": "Filter by extension",
+              "pr": "Filtrar por extensão"
             },
             "help": {
               "es": "Vacío para todas las extensiones",
-              "en": "Empty for all extension"
+              "en": "Empty for all extension",
+              "pr": "Vazio para todas as extensões"
             },
             "id": "ext_",
             "css": "col-md-6"
@@ -684,9 +889,15 @@
               "es": "fileTest",
               "en": ".fileTest"
             },
+            "description": {
+              "es": "Palabra a buscar en el nombre del archivo",
+              "en": "Word to search for in the file name",
+              "pr": "Palavra a procurar no nome do arquivo"
+            },
             "title": {
               "es": "Palabra a buscar",
-              "en": "Word to search"
+              "en": "Word to search",
+              "pr": "Palavra a procurar"
             },
 
             "id": "match",
@@ -698,13 +909,20 @@
               "es": "Variable",
               "en": "Variable"
             },
+            "description": {
+              "es": "Variable donde se almacenaran los nombres de los archivos",
+              "en": "Variable where the names of the files will be stored",
+              "pr": "Variable donde se almacenan los nombres de los archivos"
+            },
             "title": {
               "es": "Asignar resultado a variable",
-              "en": "Assign result to variable"
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
             },
             "help": {
               "es": "Nombre de variable sin llaves {}",
-              "en": "Variable name without {}"
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves {}"
             },
             "id": "result_",
             "css": "col-md-12"
@@ -714,6 +932,207 @@
       "video_youtube": "",
       "icon": "data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ0OC40NTcgNDQ4LjQ1NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ4LjQ1NyA0NDguNDU3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzAwQkJEMzsiIGQ9Ik0zMjguNzE4LDc1LjU5MmgzMS4zNDdsMCwwbDYuNzkyLTQxLjI3M2MxLjA0NS02LjI2OS0xLjA0NS0xMi41MzktNC43MDItMTYuNzE4ICBjLTQuMTgtNC43MDItOS45MjctNy4zMTQtMTUuNjczLTcuMzE0SDEwMi40OThjLTYuMjY5LDAtMTIuMDE2LDIuNjEyLTE1LjY3Myw3LjMxNGMtNC4xOCw0LjcwMi01Ljc0NywxMC45NzEtNC43MDIsMTYuNzE4ICBsNi43OTIsNDEuMjczaDMxLjM0N0gzMjguNzE4eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRDRFMUY0OyIgZD0iTTQwNy4wODYsMTM5LjMzMWw2Ljc5Mi00Mi4zMThjMS4wNDUtNi4yNjktMS4wNDUtMTIuNTM5LTQuNzAyLTE2LjcxOCAgYy00LjE4LTQuNzAyLTkuOTI3LTcuMzE0LTE1LjY3My03LjMxNGgtMzMuNDM3bDAsMGgtMzEuMzQ3SDEyMC4yNjFIODguOTE0aC0wLjUyMkg1NmMtNi4yNjksMC0xMi4wMTYsMi42MTItMTUuNjczLDcuMzE0ICBjLTQuMTgsNC43MDItNS43NDcsMTAuOTcxLTQuNzAyLDE2LjcxOGw2Ljc5Miw0Mi4zMThINDA3LjA4Nkw0MDcuMDg2LDEzOS4zMzF6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiM0RENGRTA7IiBkPSJNNDQzLjY1NywxNDQuMDMzYy00LjE4LTQuNzAyLTkuOTI3LTcuMzE0LTE2LjE5Ni03LjMxNGgtMjAuMzc1bDAsMEg0Mi40MTZoLTAuNTIySDIwLjk5NiAgYy02LjI2OSwwLTEyLjAxNiwyLjYxMi0xNi4xOTYsNy4zMTRjLTMuNjU3LDQuMTgtNS4yMjQsOS45MjctNC43MDIsMTUuNjczbDI0LjAzMywyNTAuMjUzdjAuNTIyICBjMi4wOSwxNS42NzMsMTUuNjczLDI3LjY5LDMxLjM0NywyNy42OUgzOTIuOThjMTYuNzE4LDAsMzAuMzAyLTEyLjUzOSwzMS4zNDctMjguMjEybDI0LjAzMy0yNTAuMjUzICBDNDQ4Ljg4MiwxNTQuNDgyLDQ0Ny4zMTQsMTQ4LjczNSw0NDMuNjU3LDE0NC4wMzN6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiMwMEJCRDM7IiBkPSJNMjkwLjA1NywyMzUuNDYxSDE1OC40Yy04Ljg4MiwwLTE1LjY3Myw2Ljc5Mi0xNS42NzMsMTUuNjczYzAsOC44ODIsNi43OTIsMTUuNjczLDE1LjY3MywxNS42NzMgIGgxMzEuNjU3YzguODgyLDAsMTUuNjczLTYuNzkyLDE1LjY3My0xNS42NzNDMzA1LjczMSwyNDIuMjUzLDI5OC45MzksMjM1LjQ2MSwyOTAuMDU3LDIzNS40NjF6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=",
       "module": "search_match",
+      "module_name": "Files",
+      "visible": true,
+      "options": false,
+      "father": "module",
+      "group": "scripts",
+      "linux": false,
+      "windows": true,
+      "mac": false,
+      "docker": false
+    },
+    {
+      "es": {
+        "title": "Obtener Metadatos",
+        "description": "Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.",
+        "title_options": null,
+        "options": null
+      },
+      "en": {
+        "title": "Get Metadata",
+        "description": "Obtains file metadata such as: Name, modification date, creation date and file weight.",
+        "title_options": null,
+        "options": null
+      },
+      "pr": {
+        "title": "Obter metadados",
+        "description": "Obtém metadados do arquivo como: Nome, data de modificação, data de criação e peso do arquivo.",
+        "title_options": null,
+        "options": null
+      },
+      "form": {
+        "css": "modal-lg",
+        "inputs": [
+          {
+            "type": "folder_select",
+            "placeholder": {
+              "es": "C:/User/Usuario/Folder/",
+              "en": "C:/User/Usuario/Folder/"
+            },
+            "description": {
+              "es": "Direccion donde se buscaran los archivos deseados",
+              "en": "Address where the desired files will be searched",
+              "pr": "Direção onde os arquivos desejados serão pesquisados"
+            },
+            "title": {
+              "es": "Ruta de los archivos: ",
+              "en": "File path:  ",
+              "pr": "Direção de arquivo: "
+            },
+            "id": "path",
+            "css": "col-md-12"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "",
+              "en": "",
+              "pr": ""
+            },
+            "description":{
+              "es": "Opciones para obtener todos o un determinado metadato",
+              "en": "Options to get all or a certain metadata",
+              "pr": "Opções para obter todos ou um determinado metadados"
+            },
+            "title": {
+              "es": "Seleccionar Metadato",
+              "en": "Select Metadata",
+              "pr": "Selecionar metadados"
+            },
+            "options": [
+              {
+                "title": "Todos",
+                "value": "all"
+              },
+              {
+                "title": "Peso",
+                "value": "weight"
+              },
+              {
+                "title": "Fecha Creacion",
+                "value": "date_creation"
+              },
+              {
+                "title": "Fecha Modificacion",
+                "value": "date_modification"
+              }
+            ],
+            "id": "option",
+            "css": "col-md-6"
+          },
+          {
+            "type": "select",
+            "placeholder": {
+              "es": "KB, MB o GB",
+              "en": "KB, MB or GB",
+              "pr": "KB, MB o GB"
+            },
+            "description": {
+              "es": "Devuelve el peso el archivo en la medida especificada",
+              "en": "Returns the weight of the file in the specified measure",
+              "pr": "Retorna o peso do arquivo na medida especificada"
+            },
+            "title": {
+              "es": "Seleccionar unidad",
+              "en": "Select unit",
+              "pr": "Selecionar unidade"
+            },
+            "options": [
+              {
+                "title": "KB",
+                "value": "KB"
+              },
+              {
+                "title": "MB",
+                "value": "MB"
+              },
+              {
+                "title": "GB",
+                "value": "GB"
+              }
+            ],
+            "id": "option_unit",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "fileTest",
+              "en": ".fileTest"
+            },
+            "description": {
+              "es": "Palabra que deseamos buscar en el nombre del archivo",
+              "en": "Word we want to search for in the file name",
+              "pr": "Palavra que queremos pesquisar no nome do arquivo"
+            },
+            "title": {
+              "es": "Filtrar por nombre",
+              "en": "Filter by name",
+              "pr": "Filtrar por nome"
+            },
+            "help": {
+              "es": "Vacío para obtener todos los archivos",
+              "en": "Empty to get all files",
+              "pr": "Vacío para obtener todos los archivos"
+            },
+            "id": "file_name",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": ".pdf",
+              "en": ".pdf"
+            },
+            "description": {
+              "es": "Extension que desamos buscar en los archivos",
+              "en": "Extension that we want to look for in the files",
+              "pr": "Extensão que queremos procurar nos arquivos"
+            },
+            "title": {
+              "es": "Filtrar por extensión",
+              "en": "Filter by extension",
+              "pr": "Filtrar por extensão"
+            },
+            "help": {
+              "es": "Vacío para todas las extensiones",
+              "en": "Empty for all extension",
+              "pr": "Vazio para todas as extensões"
+            },
+            "id": "ext",
+            "css": "col-md-6"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable",
+              "pr": "Variável"
+            },
+            "description":{
+              "es": "Variable donde se almacenaran los archivos encontrados",
+              "en": "Variable where the found files will be stored",
+              "pr": "Variável onde os arquivos encontrados são armazenados"
+            },
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Atribuir resultado à variável"
+            },
+            "help": {
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
+            },
+            "id": "result_",
+            "css": "col-md-12"
+          }
+        ]
+      },
+      "video_youtube": "",
+      "icon": "data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ0OC40NTcgNDQ4LjQ1NyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ4LjQ1NyA0NDguNDU3OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzAwQkJEMzsiIGQ9Ik0zMjguNzE4LDc1LjU5MmgzMS4zNDdsMCwwbDYuNzkyLTQxLjI3M2MxLjA0NS02LjI2OS0xLjA0NS0xMi41MzktNC43MDItMTYuNzE4ICBjLTQuMTgtNC43MDItOS45MjctNy4zMTQtMTUuNjczLTcuMzE0SDEwMi40OThjLTYuMjY5LDAtMTIuMDE2LDIuNjEyLTE1LjY3Myw3LjMxNGMtNC4xOCw0LjcwMi01Ljc0NywxMC45NzEtNC43MDIsMTYuNzE4ICBsNi43OTIsNDEuMjczaDMxLjM0N0gzMjguNzE4eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRDRFMUY0OyIgZD0iTTQwNy4wODYsMTM5LjMzMWw2Ljc5Mi00Mi4zMThjMS4wNDUtNi4yNjktMS4wNDUtMTIuNTM5LTQuNzAyLTE2LjcxOCAgYy00LjE4LTQuNzAyLTkuOTI3LTcuMzE0LTE1LjY3My03LjMxNGgtMzMuNDM3bDAsMGgtMzEuMzQ3SDEyMC4yNjFIODguOTE0aC0wLjUyMkg1NmMtNi4yNjksMC0xMi4wMTYsMi42MTItMTUuNjczLDcuMzE0ICBjLTQuMTgsNC43MDItNS43NDcsMTAuOTcxLTQuNzAyLDE2LjcxOGw2Ljc5Miw0Mi4zMThINDA3LjA4Nkw0MDcuMDg2LDEzOS4zMzF6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiM0RENGRTA7IiBkPSJNNDQzLjY1NywxNDQuMDMzYy00LjE4LTQuNzAyLTkuOTI3LTcuMzE0LTE2LjE5Ni03LjMxNGgtMjAuMzc1bDAsMEg0Mi40MTZoLTAuNTIySDIwLjk5NiAgYy02LjI2OSwwLTEyLjAxNiwyLjYxMi0xNi4xOTYsNy4zMTRjLTMuNjU3LDQuMTgtNS4yMjQsOS45MjctNC43MDIsMTUuNjczbDI0LjAzMywyNTAuMjUzdjAuNTIyICBjMi4wOSwxNS42NzMsMTUuNjczLDI3LjY5LDMxLjM0NywyNy42OUgzOTIuOThjMTYuNzE4LDAsMzAuMzAyLTEyLjUzOSwzMS4zNDctMjguMjEybDI0LjAzMy0yNTAuMjUzICBDNDQ4Ljg4MiwxNTQuNDgyLDQ0Ny4zMTQsMTQ4LjczNSw0NDMuNjU3LDE0NC4wMzN6Ii8+CjxwYXRoIHN0eWxlPSJmaWxsOiMwMEJCRDM7IiBkPSJNMjkwLjA1NywyMzUuNDYxSDE1OC40Yy04Ljg4MiwwLTE1LjY3Myw2Ljc5Mi0xNS42NzMsMTUuNjczYzAsOC44ODIsNi43OTIsMTUuNjczLDE1LjY3MywxNS42NzMgIGgxMzEuNjU3YzguODgyLDAsMTUuNjczLTYuNzkyLDE1LjY3My0xNS42NzNDMzA1LjczMSwyNDIuMjUzLDI5OC45MzksMjM1LjQ2MSwyOTAuMDU3LDIzNS40NjF6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=",
+      "module": "get_metadata",
       "module_name": "Files",
       "visible": true,
       "options": false,
