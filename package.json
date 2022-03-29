@@ -1006,6 +1006,10 @@
                 "value": "all"
               },
               {
+                "title": "Nombre",
+                "value": "nameFile"
+              },
+              {
                 "title": "Peso",
                 "value": "weight"
               },
@@ -1125,6 +1129,7 @@
               "en": "Variable name without {}",
               "pr": "Nome da variável sem chaves"
             },
+            "remove_vars": true,
             "id": "result_",
             "css": "col-md-12"
           }
