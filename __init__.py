@@ -38,6 +38,19 @@ import glob
     Obtengo el modulo que fueron invocados
 """
 
+try:
+    GetParams = GetParams #type:ignore
+    SetVar = SetVar #type:ignore
+    PrintException = PrintException #type:ignore
+except NameError:
+    def GetParams(name):
+        return ""
+    def SetVar(name, value):
+        pass
+    def PrintException(e):
+        print(e)
+        pass
+
 # FUNCTIONS
 
 if sys.platform == 'darwin':
