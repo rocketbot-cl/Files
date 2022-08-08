@@ -26,7 +26,6 @@ Para instalar librerias se debe ingresar por terminal a la carpeta "libs"
 
 import sys
 import time
-import datetime as dt
 import os
 from pathlib import Path
 import shutil
@@ -176,165 +175,174 @@ End Function"""
 
 module = GetParams("module")
 
-try:
+if module == "openFolder":
+    path = GetParams("path").replace("/", os.sep)
 
-    if module == "openFolder":
-        path = GetParams("path").replace("/", os.sep)
+    try:
+        if os.path.isdir(path):
+            openFolder(path)
+        elif os.path.isfile(path):
+            path = os.sep.join(path.split(os.sep)[:-1])
+            openFolder(path)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "openFile":
+    path = GetParams("path")
+
+    try:
+        if sys.platform == 'darwin' or sys.platform == 'linux':
+            subprocess.call(["open", path])
+        else:
+            path = os.path.realpath(path)
+            os.startfile(path)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "getFile":
+    result = GetParams("result")
+
+    try:
+        path = getfile()
+        SetVar(result, path)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "getFolder":
+    result = GetParams("result")
+
+    try:
+        path = get_folder()
+        SetVar(result, path)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "delete":
+    path = GetParams("path")
+    res = GetParams ('res')
     
-        try:
-            if os.path.isdir(path):
-                openFolder(path)
-            elif os.path.isfile(path):
-                path = os.sep.join(path.split(os.sep)[:-1])
-                openFolder(path)
-        except Exception as e:
-            PrintException()
-            raise e
+    try:
+        shutil.rmtree(path, ignore_errors=False,  onerror=SetVar(res, False))
+        SetVar(res, True)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "deleteFile":
+    path = GetParams('path')
+    name = GetParams('name')
+    res = GetParams ('res')
     
-    if module == "openFile":
-        path = GetParams("path")
-    
-        try:
-            if sys.platform == 'darwin' or sys.platform == 'linux':
-                subprocess.call(["open", path])
-            else:
-                path = os.path.realpath(path)
-                os.startfile(path)
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "getFile":
-        result = GetParams("result")
-    
-        try:
-            path = getfile()
-            SetVar(result, path)
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "getFolder":
-        result = GetParams("result")
-    
-        try:
-            path = get_folder()
-            SetVar(result, path)
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "delete":
-        path = GetParams("path")
-    
-        try:
-            shutil.rmtree(path, ignore_errors=False)
-            # os.rmdir(path)
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "deleteFile":
-        path = GetParams('path')
-        name = GetParams('name')
-    
-        try:
+    try:
+        if os.path.exists(os.path.join(path, name)):
             for zippath in glob.iglob(os.path.join(path, name)):
                 os.remove(zippath)
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "readFile":
-        file_ = GetParams('file_')
-        split = GetParams("split")
-        var_ = GetParams('var_')
-    
-        try:
-            if split is not None:
-                split = eval(split)
-            with open(file_, 'r', encoding="latin-1") as f:
-                if split:
-                    output = f.readlines()
-                else:
-                    output = f.read()
-                
-            SetVar(var_, output)
-    
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    
-    if module == "createFolder":
-    
-        folder = GetParams('path')
-    
-        try:
-             os.stat(folder)
-        except:
-             os.makedirs(folder)
-    
-    if module == "exists":
-        path  = GetParams("path")
-        result = GetParams("var_")
-    
-        try:
-            exist = os.path.exists(path)
-    
-            if result:
-                SetVar(result, exist)
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "renameFolder":
-    
-        # Just tested in Linux
-        # After test in Windows, change the json data for compatibility
-        # Problem in Windows: Do not split well. Uses '/' and not '\'. So, cannot split it with so.sep
-        # Dunno why. Investigate
-        
-        ## Tested in Windows, it works well. See comments for more information about separation
-    
-        # It take the path where the folder is contain
-        path = GetParams('path')
-    
-        #It gets splited
-        # Use os.sep [change separator for os.sep ( e.g.: pathSplited = path.slpit(separator) => pathSpliter = path.split(os.sep))] only if does not take from choosing the folder
-        # because choosing the folder it gets in linux os.sep ('/'). It uses python, so, it gets that way.
-        # pathSplited = path.split(os.sep)
-        separator = "/"
-        pathSplited = path.split(separator)
-    
-        # Gets the new folder's name
-        newFoldersName = GetParams('newFoldersName')
-    
-        # Change the last item of the array (path splited) and in the last position, replace the old name with the new one
-        pathSplited[(len(pathSplited)-1)] = newFoldersName
-    
-        # It gets join into one path
-        pathWithNewFolder = separator.join(pathSplited)
-    
-        try:
-        
-            #os.chdir(path) Rompe rockect :S
-            
-            # Method to rename the folder
-            os.rename(path, pathWithNewFolder)
-    
-        except Exception as e:
-            PrintException()
-            raise e
-    
-    if module == "listFiles":
-        path = GetParams("path")
-        var_ = GetParams("result")
-        option = GetParams("option")
-    
-        def ext(x):
-            return os.path.splitext(x)[::-1]
+            SetVar(res, True)
+        else:
+            SetVar(res, False)
+    except Exception as e:
+        SetVar(res, False)
+        PrintException()
+        raise e
 
+if module == "readFile":
+    file_ = GetParams('file_')
+    split = GetParams("split")
+    var_ = GetParams('var_')
+
+    try:
+        if split is not None:
+            split = eval(split)
+        with open(file_, 'r', encoding="latin-1") as f:
+            if split:
+                output = f.readlines()
+            else:
+                output = f.read()
+            
+        SetVar(var_, output)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "createFolder":
+
+    folder = GetParams('path')
+    res = GetParams ('res')
+    
+    try:
+        os.makedirs(folder)
+        SetVar(res, True)
+    except Exception as e:
+        SetVar(res, False)
+        PrintException()
+        raise e
+        
+        
+if module == "exists":
+    path  = GetParams("path")
+    res = GetParams("res")
+
+    try:
+        exist = os.path.exists(path)
+
+        if res:
+            SetVar(res, exist)
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "renameFolder":
+
+    # Just tested in Linux
+    # After test in Windows, change the json data for compatibility
+    # Problem in Windows: Do not split well. Uses '/' and not '\'. So, cannot split it with so.sep
+    # Dunno why. Investigate
+    
+    ## Tested in Windows, it works well. See comments for more information about separation
+
+    # It take the path where the folder is contain
+    path = GetParams('path')
+
+    #It gets splited
+    # Use os.sep [change separator for os.sep ( e.g.: pathSplited = path.slpit(separator) => pathSpliter = path.split(os.sep))] only if does not take from choosing the folder
+    # because choosing the folder it gets in linux os.sep ('/'). It uses python, so, it gets that way.
+    # pathSplited = path.split(os.sep)
+    separator = "/"
+    pathSplited = path.split(separator)
+
+    # Gets the new folder's name
+    newFoldersName = GetParams('newFoldersName')
+
+    # Change the last item of the array (path splited) and in the last position, replace the old name with the new one
+    pathSplited[(len(pathSplited)-1)] = newFoldersName
+
+    # It gets join into one path
+    pathWithNewFolder = separator.join(pathSplited)
+
+    try:
+
+        #os.chdir(path) Rompe rockect :S
+        
+        # Method to rename the folder
+        os.rename(path, pathWithNewFolder)
+
+    except Exception as e:
+        PrintException()
+        raise e
+
+if module == "listFiles":
+    path = GetParams("path")
+    var_ = GetParams("result")
+    option = GetParams("option")
+
+    def ext(x):
+        return os.path.splitext(x)[::-1]
+    try:
         if option == "date":
             files = sorted(Path(path).iterdir(), key=os.path.getmtime)
             paths = [file.name for file in files]
@@ -343,126 +351,37 @@ try:
             paths = [file.name for file in files]
         else:
             paths = os.listdir(path)
-    
-        SetVar(var_, paths)
 
-    
-    
-    if module == "search_match":
-    
-        path = GetParams('path')
-        ext_ = GetParams('ext_')
-        match = GetParams('match')
-        result_ = GetParams('result_')
-    
-        
+        SetVar(var_, paths)
+    except Exception as e:
+        PrintException()
+        raise e
+
+
+if module == "search_match":
+
+    path = GetParams('path')
+    ext_ = GetParams('ext_')
+    match = GetParams('match')
+    result_ = GetParams('result_')
+
+    try:
         list_ext = []
-    
+
         if ext_:
             for file in os.listdir(path):
                 if file.endswith(ext_):
                     list_ext.append(file)
         else:
             list_ext = list_ext = os.listdir(path)
-    
+
         res = []
         for ele in list_ext:
             if match in ele:
                 res.append(ele)
-    
-        SetVar(result_, res)
-    
-    if module == "get_metadata":
-        def obtener_tamano_en_bytes(ruta_carpeta):
-            tamano = os.path.getsize(ruta_carpeta)
-            return tamano
-        
-        def convert_unit(size_in_bytes, unit):
-            if unit == "KB":
-                return size_in_bytes/1024
-            elif unit == "MB":
-                return size_in_bytes/(1024*1024)
-            elif unit == "GB":
-                return size_in_bytes/(1024*1024*1024)
-            else:
-                return size_in_bytes
-        
-        path = GetParams('path')
-        option = GetParams('option')
-        file_name = GetParams('file_name')
-        result_ = GetParams('result_')
-        option_unit = GetParams('option_unit')
-        ext = GetParams('ext')
-        miArray = []
-        
-        if option == "all":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
-                    modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
-                    created = dt.datetime.fromtimestamp(os.path.getctime(path2))
-                    date_modified = modified.strftime("%d/%m/%Y, %H:%M")
-                    date_created = created.strftime("%d/%m/%Y, %H:%M")
-                    size = obtener_tamano_en_bytes(path2)
-                    realSize = convert_unit(size, option_unit)
-                    realSize = "%.2f" % round(realSize, 2)
-                    res.append({"nombre":f"{ele}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
-                    
-        elif option == "weight":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
-                    size = obtener_tamano_en_bytes(path2)
-                    realSize = convert_unit(size, option_unit)
-                    realSize = "%.2f" % round(realSize, 2)
-                    res.append({"nombre":f"{ele}", "peso":f"{realSize}  {option_unit}"})
-                
-        elif option == "date_creation":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
-                    created = dt.datetime.fromtimestamp(os.path.getctime(path2))
-                    date_created = created.strftime("%d/%m/%Y, %H:%M")
-                    res.append({"nombre":f"{ele}","creado":f"  {date_created}"})
-        
-        elif option == "date_modification":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
-                    modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
-                    date_modified = modified.strftime("%d/%m/%Y, %H:%M")
-                    res.append({"nombre":f"{ele}","modificado":f"{date_modified}"})
 
         SetVar(result_, res)
-        
-except Exception as e:
-   PrintException()
-   raise e
+
+    except Exception as e:
+       PrintException()
+       raise e

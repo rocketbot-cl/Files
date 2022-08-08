@@ -6,15 +6,12 @@
   
 Módulo para el manejo de archivos  
 
-## How to install this module
+## Howto install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-# How to Use
-
-
-
+# Como usar este modulo
 
 ## Overview
 
@@ -53,12 +50,7 @@ Check if a file o folder exists
 CList files and select sort
 
 12. Search File  
-Returns a list with matches
-
-13. Get Metadata  
-Obtains file metadata such as: Name, modification date, creation date and file weight.  
-
-
+Returns a list with matches  
 
 
 ----
