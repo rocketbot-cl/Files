@@ -6,7 +6,7 @@
   
 Módulo para el manejo de archivos  
   
-![banner](imgs/Banner_Files.png)
+![banner](C:\Users\jmsir\Desktop\RB\Rocketbot\modules\Files\docs\imgs\Banner_Files.png)
 ## Como instalar este módulo
   
 __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
@@ -25,7 +25,7 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de ro
 
 ### Abrir carpeta
   
-Abre la carpeta contenedora de un archivo dado 
+Abre la carpeta contenedora de un archivo
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de la carpeta |Abre la carpeta de la ruta especificada|C:/User/Usuario/Folder/|
@@ -73,7 +73,8 @@ Lee un archivo y guarda su contenido en una variable
 Elimina una carpeta con todos sus archivos
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Ruta de la carpeta |Ruta de la carpeta a eliminar|C:/User/Usuario/Folder/|
+|Ruta de la carpeta |Selecciona la ruta de la carpeta a eliminar|C:/User/Usuario/Folder/|
+|Asignar resultado a variable||Variable|
 
 ### Elimina un archivo
   
@@ -82,6 +83,7 @@ Elimina un archivo indicando su extensión y su nombre o parte del nombre
 | --- | --- | --- |
 |Ruta de la carpeta |Ruta del archivo a eliminar|C:/User/Usuario/Folder/|
 |Tipo de archivo a eliminar|Nombre y extension del archivo a eliminar|nombre*.pdf|
+|Asignar resultado a variable||Variable|
 
 ### Crear Carpeta
   
@@ -89,6 +91,7 @@ Ingrese la ruta y nombre donde quiere crear la carpeta
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta y nombre de carpeta|Ruta donde se creara la carpeta|C:/Users/User/Desktop/folder_test|
+|Asignar resultado a variable||Variable|
 
 ### Comprobar existencia
   
