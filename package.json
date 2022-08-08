@@ -2,7 +2,7 @@
   "author": "Danilo Toro - Rocketbot - <danilo.toro@rocketbot.cl> - Marcela Vergara - <marcela@rocketbot.cl>",
   "description": "Módulo para el manejo de archivos",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "7.3",
+  "version": "7.4",
   "license": "MIT",
   "homepage": "http://rocketbot.co/",
   "linux": false,
@@ -470,6 +470,25 @@
             },
             "id": "path",
             "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable"
+            },
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Asignar resultado a variable"
+            },
+            "help": {
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
+            },
+            "id": "var_",
+            "css": "col-md-12"
           }
         ]
       },
@@ -547,6 +566,25 @@
             },
             "id": "name",
             "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable"
+            },
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Asignar resultado a variable"
+            },
+            "help": {
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
+            },
+            "id": "var_",
+            "css": "col-md-12"
           }
         ]
       },
@@ -608,6 +646,25 @@
               "pr": "Se a direção não existe criar todas as pastas"
             },
             "id": "path",
+            "css": "col-md-12"
+          },
+          {
+            "type": "input",
+            "placeholder": {
+              "es": "Variable",
+              "en": "Variable"
+            },
+            "title": {
+              "es": "Asignar resultado a variable",
+              "en": "Assign result to variable",
+              "pr": "Asignar resultado a variable"
+            },
+            "help": {
+              "es": "Nombre de variable sin llaves {}",
+              "en": "Variable name without {}",
+              "pr": "Nome da variável sem chaves"
+            },
+            "id": "var_",
             "css": "col-md-12"
           }
         ]

@@ -226,10 +226,11 @@ try:
     
     if module == "delete":
         path = GetParams("path")
-    
+        result = GetParams('var_')
+        
         try:
-            shutil.rmtree(path, ignore_errors=False)
-            # os.rmdir(path)
+            shutil.rmtree(path, ignore_errors=False,  onerror=SetVar(result, False))
+            SetVar(result, True)
         except Exception as e:
             PrintException()
             raise e
@@ -237,11 +238,17 @@ try:
     if module == "deleteFile":
         path = GetParams('path')
         name = GetParams('name')
-    
+        result = GetParams('var_')
+                            
         try:
-            for zippath in glob.iglob(os.path.join(path, name)):
-                os.remove(zippath)
+            if os.path.exists(os.path.join(path, name)):
+                for zippath in glob.iglob(os.path.join(path, name)):
+                    os.remove(zippath)
+                SetVar(result, True)
+            else:
+                SetVar(result, False)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
@@ -269,11 +276,15 @@ try:
     if module == "createFolder":
     
         folder = GetParams('path')
-    
+        result = GetParams('var_')
+        
         try:
-             os.stat(folder)
-        except:
-             os.makedirs(folder)
+            os.makedirs(folder)
+            SetVar(result, True)
+        except Exception as e:
+            SetVar(result, False)
+            PrintException()
+            raise e
     
     if module == "exists":
         path  = GetParams("path")
@@ -345,8 +356,6 @@ try:
             paths = os.listdir(path)
     
         SetVar(var_, paths)
-
-    
     
     if module == "search_match":
     

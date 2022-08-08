@@ -6,12 +6,12 @@
   
 Módulo para el manejo de archivos  
 
-## How to install this module
+## Howto install this module
   
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-# How to Use
+# How to Use this Module
 
 
 
