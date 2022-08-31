@@ -2,17 +2,14 @@
 
 
 
-# Archivos
+# Files
   
 Módulo para el manejo de archivos  
   
 ![banner](imgs/Banner_Files.png)
-## Como instalar este módulo
+## How to install this module
   
-__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de rocketbot.  
-
-
-
+__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
 # Como usar este modulo
@@ -20,111 +17,116 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de ro
 
 
 
+## Description of the commands
 
-## Descripción de los comandos
-
-### Abrir carpeta
+### Open Folder
   
-Abre la carpeta contenedora de un archivo dado 
-|Parámetros|Descripción|ejemplo|
+Open folder from a file path
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta |Abre la carpeta de la ruta especificada|C:/User/Usuario/Folder/|
+|File path  |Open the folder from the specified path|C:/User/Usuario/Folder/|
+|Assign result to variable||Variable|
 
-### Abrir Archivo
+### Open File
   
-Abre un archivo 
-|Parámetros|Descripción|ejemplo|
+Open file
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta del archivo |Abre el archivo de la ruta especificada|C:/User/Usuario/Folder/File.extension|
+|File path  |Open the file from the specified path|C:/User/Usuario/Folder/File.extension|
+|Assign result to variable||Variable|
 
-### Seleccionar archivo
+### Get file
   
-Pide al usuario seleccionar un archivo
-|Parámetros|Descripción|ejemplo|
+Ask the user to select a file and get the path
+|Parameters|Description|example|
 | --- | --- | --- |
-|Nombre de la varible donde guardar el path|Al ejecutarlo se abre el explorador de archivos para que podamos seleccionar el archivo, una vez seleccionado nos devuelve la dirección donde se encuentra|Result|
+|Variable where save path  |When you execute it, or the file explorer opens so that we can select the file, once selected, it provides us with or direct where it is located.|Result|
 
-### Seleccionar carpeta
+### Get folder
   
-Pide al usuario seleccionar una carpeta
-|Parámetros|Descripción|ejemplo|
+Ask the user to select a folder
+|Parameters|Description|example|
 | --- | --- | --- |
-|Nombre de la varible donde guardar el path|Al ejecutarse se abre el explorador de archivos para que seleccionemos la carpeta que deseemos, una vez seleccionado nos devuelve la ruta donde se aloja|Result|
+|Variable where save path  |When executed, the file explorer opens so that we can select the folder we want, once selected, it returns the path where it is located|Result|
 
-### Renombrar carpeta
+### Rename folder
   
-Pide al usuario seleccionar una carpeta para cambiarle el nombre
-|Parámetros|Descripción|ejemplo|
+Ask the user to select a folder to rename it
+|Parameters|Description|example|
 | --- | --- | --- |
-|Direção da pasta a renomear |Al ejecutar se renombra la carpeta que hayamos especificado|C:/User/Folder/|
-|Nuevo nombre de la carpeta||Nuevo nombre|
+|Path of the folder to rename  |When executing, the folder that we have specified is renamed|C:/User/Folder/|
+|New name of the folder||New name|
+|Assign result to variable||Variable|
 
-### Leer archivo
+### Read file
   
-Lee un archivo y guarda su contenido en una variable
-|Parámetros|Descripción|ejemplo|
+Read a file and save its content in a variable
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de archivo||C:/Users/User/Desktop/file.txt|
-|Separar cada línea|Devuelve el contenido de un archivo y lo almacena en una varibale, si se tilda la opcion separar lineas devuelve el contenido del archivo dentro de una lista y cada linea es un elemento dentro de la lista||
-|Asignar resultado a variable|Variable donde se almacenara el valor obtenido|Variable|
+|File path||C:/Users/User/Desktop/file.txt|
+|Separate lines|Returns the content of a file and stores it in a variable, if the separate lines option is checked, it returns the content of the file within a list and each line is an element within the list||
+|Assign result to variable|Variable where the obtained value will be stored|Variable|
 
-### Elimina una carpeta
+### Delete folder
   
-Elimina una carpeta con todos sus archivos
-|Parámetros|Descripción|ejemplo|
+Delete a folder with all files
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta |Ruta de la carpeta a eliminar|C:/User/Usuario/Folder/|
+|File path  |Slect path of the folder to delete|C:/User/Usuario/Folder/|
+|Assign result to variable||Variable|
 
-### Elimina un archivo
+### Delete file
   
-Elimina un archivo indicando su extensión y su nombre o parte del nombre
-|Parámetros|Descripción|ejemplo|
+Delete a file indicating its extension and its name or part of the name
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta |Ruta del archivo a eliminar|C:/User/Usuario/Folder/|
-|Tipo de archivo a eliminar|Nombre y extension del archivo a eliminar|nombre*.pdf|
+|File path  |Path of the file to delete|C:/User/Usuario/Folder/|
+|Type of file to delete|Name and extension of the file to delete|name*.pdf|
+|Assign result to variable||Variable|
 
-### Crear Carpeta
+### Create Folder
   
-Ingrese la ruta y nombre donde quiere crear la carpeta
-|Parámetros|Descripción|ejemplo|
+Enter the path with name where you want to create the folder
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta y nombre de carpeta|Ruta donde se creara la carpeta|C:/Users/User/Desktop/folder_test|
+|File path|Path where folder are be created|C:/Users/User/Desktop/folder_test|
+|Assign result to variable||Variable|
 
-### Comprobar existencia
+### Check existence
   
-Comprueba si existe un archivo o carpeta
-|Parámetros|Descripción|ejemplo|
+Check if a file o folder exists
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta |Direccion de la carpeta a la que se desea comprobar la existencia|C:/User/Usuario/Folder/|
-|Asignar resultado a variable||Variable|
+|File path  |Address of the folder you want to check for existence|C:/User/Usuario/Folder/|
+|Assign result to variable||Variable|
 
-### Listar archivos ordenados
+### List sorted files
   
-Lista archivos y selecciona el orden
-|Parámetros|Descripción|ejemplo|
+CList files and select sort
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta |Direccion de la carpeta de la cual se quiere listar los archivos|C:/User/Usuario/Folder/|
-|Ordenar por |Opciones para ordenar, Nombre, Fecha y Tipo||
-|Asignar resultado a variable|Variable donde se almacena la lista de elementos de la carpeta|Variable|
+|File path  |Path of the folder from which you want to list the files|C:/User/Usuario/Folder/|
+|Sort by|Options to order, Name, Date and Type||
+|Assign result to variable|Variable where the list of items in the folder is stored|Variable|
 
-### Buscar Archivo
+### Search File
   
-Devuelve una lista con coincidencias
-|Parámetros|Descripción|ejemplo|
+Returns a list with matches
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de la carpeta |Direccion donde se buscara el archivo|C:/User/Usuario/Folder/|
-|Filtrar por extensión|Filtra por extension buscando asi todos los archivos con la extension especificada|.pdf|
-|Palabra a buscar|Palabra a buscar en el nombre del archivo|fileTest|
-|Asignar resultado a variable|Variable donde se almacenaran los nombres de los archivos|Variable|
+|File path  |Address where the file will be searched|C:/User/Usuario/Folder/|
+|Filter by extension|Filter by extension looking for all files with the specified extension|.pdf|
+|Word to search|Word to search for in the file name|.fileTest|
+|Assign result to variable|Variable where the names of the files will be stored|Variable|
 
-### Obtener Metadatos
+### Get Metadata
   
-Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.
-|Parámetros|Descripción|ejemplo|
+Obtains file metadata such as: Name, modification date, creation date and file weight.
+|Parameters|Description|example|
 | --- | --- | --- |
-|Ruta de los archivos |Direccion donde se buscaran los archivos deseados|C:/User/Usuario/Folder/|
-|Seleccionar Metadato|Opciones para obtener todos o un determinado metadato||
-|Seleccionar unidad|Devuelve el peso el archivo en la medida especificada|KB, MB o GB|
-|Filtrar por nombre|Palabra que deseamos buscar en el nombre del archivo|fileTest|
-|Filtrar por extensión|Extension que desamos buscar en los archivos|.pdf|
-|Asignar resultado a variable|Variable donde se almacenaran los archivos encontrados|Variable|
+|File path  |Address where the desired files will be searched|C:/User/Usuario/Folder/|
+|Select Metadata|Options to get all or a certain metadata||
+|Select unit|Returns the weight of the file in the specified measure|KB, MB or GB|
+|Filter by name|Word we want to search for in the file name|.fileTest|
+|Filter by extension|Extension that we want to look for in the files|.pdf|
+|Assign result to variable|Variable where the found files will be stored|Variable|
