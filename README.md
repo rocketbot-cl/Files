@@ -11,8 +11,8 @@ Módulo para el manejo de archivos
 __Download__ and __install__ the content in 'modules' folder in Rocketbot path  
 
 
-# Como usar este modulo
 
+# How to use this module
 
 
 

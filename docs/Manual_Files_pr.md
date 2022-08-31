@@ -13,6 +13,10 @@ __Baixe__ e __instale__ o conteúdo na pasta 'modules' no caminho do Rocketbot
 
 
 
+# Como usar este módulo
+
+
+
 ## Descrição do comando
 
 ### Abrir Pasta

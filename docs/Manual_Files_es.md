@@ -13,11 +13,7 @@ __Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Ro
 
 
 
-
-
-# How to use
-
-
+# Como usar este modulo
 
 
 
