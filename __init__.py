@@ -393,10 +393,13 @@ try:
             list_ext = list_ext = os.listdir(path)
     
         res = []
-        for ele in list_ext:
-            if match in ele:
-                res.append(ele)
-    
+        if match:
+            for ele in list_ext:
+                if match in ele:
+                    res.append(ele)
+        else:
+            res = list_ext
+            
         SetVar(result_, res)
     
     if module == "get_metadata":
