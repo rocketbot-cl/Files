@@ -173,6 +173,10 @@ End Function"""
 
     return file_path
 
+def remove_readonly(func, path, _):
+                "Clear the readonly bit and reattempt the removal"
+                os.chmod(path, 0o0200)
+                func(path)
 
 module = GetParams("module")
 
@@ -180,6 +184,7 @@ try:
 
     if module == "openFolder":
         path = GetParams("path").replace("/", os.sep)
+        result = GetParams('var_')
     
         try:
             if os.path.isdir(path):
@@ -187,30 +192,36 @@ try:
             elif os.path.isfile(path):
                 path = os.sep.join(path.split(os.sep)[:-1])
                 openFolder(path)
+            SetVar(result, True)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
     if module == "openFile":
         path = GetParams("path")
-    
+        result = GetParams('var_')
+
         try:
             if sys.platform == 'darwin' or sys.platform == 'linux':
                 subprocess.call(["open", path])
             else:
                 path = os.path.realpath(path)
                 os.startfile(path)
+            SetVar(result, True)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
     if module == "getFile":
         result = GetParams("result")
-    
+
         try:
             path = getfile()
             SetVar(result, path)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
@@ -221,27 +232,37 @@ try:
             path = get_folder()
             SetVar(result, path)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
     if module == "delete":
         path = GetParams("path")
-    
+        result = GetParams('var_')
+        
         try:
-            shutil.rmtree(path, ignore_errors=False)
-            # os.rmdir(path)
+            shutil.rmtree(path, onerror=remove_readonly)
+            SetVar(result, True)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
     if module == "deleteFile":
         path = GetParams('path')
         name = GetParams('name')
-    
+        result = GetParams('var_')
+                            
         try:
-            for zippath in glob.iglob(os.path.join(path, name)):
-                os.remove(zippath)
+            if os.path.exists(os.path.join(path, name)):
+                for zippath in glob.iglob(os.path.join(path, name)):
+                    os.chmod(zippath, 0o0200)
+                    os.remove(zippath)
+                SetVar(result, True)
+            else:
+                SetVar(result, False)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
@@ -262,6 +283,7 @@ try:
             SetVar(var_, output)
     
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
     
@@ -269,11 +291,15 @@ try:
     if module == "createFolder":
     
         folder = GetParams('path')
-    
+        result = GetParams('var_')
+        
         try:
-             os.stat(folder)
-        except:
-             os.makedirs(folder)
+            os.makedirs(folder)
+            SetVar(result, True)
+        except Exception as e:
+            SetVar(result, False)
+            PrintException()
+            raise e
     
     if module == "exists":
         path  = GetParams("path")
@@ -289,6 +315,7 @@ try:
             raise e
     
     if module == "renameFolder":
+        result = GetParams("var_")
     
         # Just tested in Linux
         # After test in Windows, change the json data for compatibility
@@ -322,10 +349,12 @@ try:
             
             # Method to rename the folder
             os.rename(path, pathWithNewFolder)
-    
+            SetVar(result, True)
         except Exception as e:
+            SetVar(result, False)
             PrintException()
             raise e
+    
     
     if module == "listFiles":
         path = GetParams("path")
@@ -345,8 +374,6 @@ try:
             paths = os.listdir(path)
     
         SetVar(var_, paths)
-
-    
     
     if module == "search_match":
     
@@ -366,10 +393,13 @@ try:
             list_ext = list_ext = os.listdir(path)
     
         res = []
-        for ele in list_ext:
-            if match in ele:
-                res.append(ele)
-    
+        if match:
+            for ele in list_ext:
+                if match in ele:
+                    res.append(ele)
+        else:
+            res = list_ext
+            
         SetVar(result_, res)
     
     if module == "get_metadata":
@@ -392,20 +422,18 @@ try:
         file_name = GetParams('file_name')
         result_ = GetParams('result_')
         option_unit = GetParams('option_unit')
-        ext = GetParams('ext')
-        miArray = []
+        ext_ = GetParams('ext')
+        
+        if ext_ == "":
+            ext_ = None
+        if file_name == "":
+            file_name = None
+        res = []
         
         if option == "all":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
+            if file_name is None and ext_ is None:
+                for _file in os.listdir(path):
+                    path2 = path + "/" + _file
                     modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
                     created = dt.datetime.fromtimestamp(os.path.getctime(path2))
                     date_modified = modified.strftime("%d/%m/%Y, %H:%M")
@@ -413,54 +441,123 @@ try:
                     size = obtener_tamano_en_bytes(path2)
                     realSize = convert_unit(size, option_unit)
                     realSize = "%.2f" % round(realSize, 2)
-                    res.append({"nombre":f"{ele}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
-                    
+                    res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
+                        
+            elif ext_ is not None and file_name is None:
+                for _file in os.listdir(path):
+                    if _file.endswith(ext_):
+                        path2 = path + "/" + _file
+                        modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
+                        created = dt.datetime.fromtimestamp(os.path.getctime(path2))
+                        date_modified = modified.strftime("%d/%m/%Y, %H:%M")
+                        date_created = created.strftime("%d/%m/%Y, %H:%M")
+                        size = obtener_tamano_en_bytes(path2)
+                        realSize = convert_unit(size, option_unit)
+                        realSize = "%.2f" % round(realSize, 2)
+                        res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
+                        
+            elif file_name is not None and ext_ is None:
+                for _file in os.listdir(path):
+                    if file_name in _file:
+                        path2 = path + "/" + _file
+                        modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
+                        date_modified = modified.strftime("%d/%m/%Y, %H:%M")
+                        created = dt.datetime.fromtimestamp(os.path.getctime(path2))
+                        date_created = created.strftime("%d/%m/%Y, %H:%M")
+                        size = obtener_tamano_en_bytes(path2)
+                        realSize = convert_unit(size, option_unit)
+                        realSize = "%.2f" % round(realSize, 2)
+                        res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
+                        
+        elif option == "nameFile":
+            if ext_ is not None and file_name is None:
+                for _file in os.listdir(path):
+                    if _file.endswith(ext_):
+                        res.append({"nombre":f"{_file}"})
+                        
+            elif file_name is not None and ext_ is None:
+                for _file in os.listdir(path):
+                    if file_name in _file:
+                        res.append({"nombre":f"{_file}"})
+                        
+            elif file_name is None and ext_ is None:
+                for _file in os.listdir(path):
+                    res.append({"nombre":f"{_file}"})
+                        
         elif option == "weight":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
+            if ext_ is not None and file_name is None:
+                for _file in os.listdir(path):
+                    if _file.endswith(ext_):
+                        path2 = path + "/" + _file
+                        size = obtener_tamano_en_bytes(path2)
+                        realSize = convert_unit(size, option_unit)
+                        realSize = "%.2f" % round(realSize, 2)
+                        res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}"})
+            elif file_name is not None and ext_ is None:
+                for _file in os.listdir(path):
+                    if file_name in _file:
+                            path2 = path + "/" + _file
+                            size = obtener_tamano_en_bytes(path2)
+                            realSize = convert_unit(size, option_unit)
+                            realSize = "%.2f" % round(realSize, 2)
+                            res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}"})
+                        
+            elif file_name is  None and ext_ is None:
+                for _file in os.listdir(path):
+                    path2 = path + "/" + _file
                     size = obtener_tamano_en_bytes(path2)
                     realSize = convert_unit(size, option_unit)
                     realSize = "%.2f" % round(realSize, 2)
-                    res.append({"nombre":f"{ele}", "peso":f"{realSize}  {option_unit}"})
+                    res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}"})
                 
         elif option == "date_creation":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
-                    created = dt.datetime.fromtimestamp(os.path.getctime(path2))
+            if ext_ is not None and file_name is None:
+                for _file in os.listdir(path):
+                    if _file.endswith(ext_):
+                        created = dt.datetime.fromtimestamp(os.path.getctime(path))
+                        date_created = created.strftime("%d/%m/%Y, %H:%M")
+                        res.append(_file)
+                        res.append({"creado":f"  {date_created}"})
+                        
+            elif file_name is not None and ext_ is None:
+                for _file in os.listdir(path):
+                    if file_name in _file:
+                        created = dt.datetime.fromtimestamp(os.path.getctime(path))
+                        date_created = created.strftime("%d/%m/%Y, %H:%M")
+                        res.append(_file)
+                        res.append({"creado":f"  {date_created}"})
+                        
+            elif file_name is  None and ext_ is None:
+                for _file in os.listdir(path):
+                    created = dt.datetime.fromtimestamp(os.path.getctime(path))
                     date_created = created.strftime("%d/%m/%Y, %H:%M")
-                    res.append({"nombre":f"{ele}","creado":f"  {date_created}"})
+                    res.append(_file)
+                    res.append({"creado":f"  {date_created}"})
         
         elif option == "date_modification":
-            if ext is not None:
-                for file in os.listdir(path):
-                    if file.endswith(ext):
-                        miArray.append(file)
-            else:
-                miArray = miArray = os.listdir(path)
-            res = []
-            for ele in miArray:
-                if file_name in ele:
-                    path2 = path + "/" + ele
-                    modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
+            if ext_ is not None and file_name is None:
+                for _file in os.listdir(path):
+                    if _file.endswith(ext_):
+                        modified = dt.datetime.fromtimestamp(os.path.getmtime(path))
+                        date_modified = modified.strftime("%d/%m/%Y, %H:%M")
+                        res.append(_file)
+                        res.append({"modificado":f"  {date_modified}"})
+                        
+            elif file_name is not None and ext_ is None:
+                for _file in os.listdir(path):
+                    if file_name in _file:
+                        modified = dt.datetime.fromtimestamp(os.path.getmtime(path))
+                        date_modified = modified.strftime("%d/%m/%Y, %H:%M")
+                        res.append(_file)
+                        res.append({"modificado":f"  {date_modified}"})
+                        
+            elif file_name is None and ext_ is None:
+                for _file in os.listdir(path):
+                    modified = dt.datetime.fromtimestamp(os.path.getmtime(path))
                     date_modified = modified.strftime("%d/%m/%Y, %H:%M")
-                    res.append({"nombre":f"{ele}","modificado":f"{date_modified}"})
-
+                    res.append(_file)
+                    res.append({"modificado":f"  {date_modified}"})
+                        
         SetVar(result_, res)
         
 except Exception as e:
