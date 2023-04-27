@@ -173,6 +173,10 @@ End Function"""
 
     return file_path
 
+def remove_readonly(func, path, _):
+                "Clear the readonly bit and reattempt the removal"
+                os.chmod(path, 0o0200)
+                func(path)
 
 module = GetParams("module")
 
@@ -237,7 +241,7 @@ try:
         result = GetParams('var_')
         
         try:
-            shutil.rmtree(path, ignore_errors=False,  onerror=SetVar(result, False))
+            shutil.rmtree(path, onerror=remove_readonly)
             SetVar(result, True)
         except Exception as e:
             SetVar(result, False)
@@ -252,6 +256,7 @@ try:
         try:
             if os.path.exists(os.path.join(path, name)):
                 for zippath in glob.iglob(os.path.join(path, name)):
+                    os.chmod(zippath, 0o0200)
                     os.remove(zippath)
                 SetVar(result, True)
             else:
@@ -388,10 +393,13 @@ try:
             list_ext = list_ext = os.listdir(path)
     
         res = []
-        for ele in list_ext:
-            if match in ele:
-                res.append(ele)
-    
+        if match:
+            for ele in list_ext:
+                if match in ele:
+                    res.append(ele)
+        else:
+            res = list_ext
+            
         SetVar(result_, res)
     
     if module == "get_metadata":
