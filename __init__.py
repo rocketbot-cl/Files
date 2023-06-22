@@ -254,13 +254,14 @@ try:
         result = GetParams('var_')
                             
         try:
-            if os.path.exists(os.path.join(path, name)):
+            if os.path.isdir(path):
                 for zippath in glob.iglob(os.path.join(path, name)):
                     os.chmod(zippath, 0o0200)
                     os.remove(zippath)
                 SetVar(result, True)
             else:
                 SetVar(result, False)
+                raise Exception("The path does not exist")
         except Exception as e:
             SetVar(result, False)
             PrintException()
