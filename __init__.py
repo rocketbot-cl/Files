@@ -254,13 +254,14 @@ try:
         result = GetParams('var_')
                             
         try:
-            if os.path.exists(os.path.join(path, name)):
+            if os.path.isdir(path):
                 for zippath in glob.iglob(os.path.join(path, name)):
                     os.chmod(zippath, 0o0200)
                     os.remove(zippath)
                 SetVar(result, True)
             else:
                 SetVar(result, False)
+                raise Exception("The path does not exist")
         except Exception as e:
             SetVar(result, False)
             PrintException()
@@ -430,33 +431,8 @@ try:
             file_name = None
         res = []
         
-        if option == "all":
-            if file_name is None and ext_ is None:
-                for _file in os.listdir(path):
-                    path2 = path + "/" + _file
-                    modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
-                    created = dt.datetime.fromtimestamp(os.path.getctime(path2))
-                    date_modified = modified.strftime("%d/%m/%Y, %H:%M")
-                    date_created = created.strftime("%d/%m/%Y, %H:%M")
-                    size = obtener_tamano_en_bytes(path2)
-                    realSize = convert_unit(size, option_unit)
-                    realSize = "%.2f" % round(realSize, 2)
-                    res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
-                        
-            elif ext_ is not None and file_name is None:
-                for _file in os.listdir(path):
-                    if _file.endswith(ext_):
-                        path2 = path + "/" + _file
-                        modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
-                        created = dt.datetime.fromtimestamp(os.path.getctime(path2))
-                        date_modified = modified.strftime("%d/%m/%Y, %H:%M")
-                        date_created = created.strftime("%d/%m/%Y, %H:%M")
-                        size = obtener_tamano_en_bytes(path2)
-                        realSize = convert_unit(size, option_unit)
-                        realSize = "%.2f" % round(realSize, 2)
-                        res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
-                        
-            elif file_name is not None and ext_ is None:
+        if option == "all":        
+            if file_name:
                 for _file in os.listdir(path):
                     if file_name in _file:
                         path2 = path + "/" + _file
@@ -468,7 +444,32 @@ try:
                         realSize = convert_unit(size, option_unit)
                         realSize = "%.2f" % round(realSize, 2)
                         res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
-                        
+            
+            elif ext_:
+                for _file in os.listdir(path):
+                    if _file.endswith(ext_):
+                        path2 = path + "/" + _file
+                        modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
+                        created = dt.datetime.fromtimestamp(os.path.getctime(path2))
+                        date_modified = modified.strftime("%d/%m/%Y, %H:%M")
+                        date_created = created.strftime("%d/%m/%Y, %H:%M")
+                        size = obtener_tamano_en_bytes(path2)
+                        realSize = convert_unit(size, option_unit)
+                        realSize = "%.2f" % round(realSize, 2)
+                        res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
+            
+            else:
+                for _file in os.listdir(path):
+                    path2 = path + "/" + _file
+                    modified = dt.datetime.fromtimestamp(os.path.getmtime(path2))
+                    created = dt.datetime.fromtimestamp(os.path.getctime(path2))
+                    date_modified = modified.strftime("%d/%m/%Y, %H:%M")
+                    date_created = created.strftime("%d/%m/%Y, %H:%M")
+                    size = obtener_tamano_en_bytes(path2)
+                    realSize = convert_unit(size, option_unit)
+                    realSize = "%.2f" % round(realSize, 2)
+                    res.append({"nombre":f"{_file}", "peso":f"{realSize}  {option_unit}", "modificado":f"{date_modified}", "creado":f"  {date_created}"})
+             
         elif option == "nameFile":
             if ext_ is not None and file_name is None:
                 for _file in os.listdir(path):
