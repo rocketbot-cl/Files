@@ -1,7 +1,3 @@
-
-
-
-
 # Arquivos
   
 Gerencie seus arquivos e pastas, abra e leia arquivos, controle sua existência e obtenha seus metadados.  
@@ -29,7 +25,7 @@ Abra a pasta que contém um arquivo
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção da pasta|Abra o tapete de rota especificado|C:/User/Usuario/Pasta/|
-|Asignar resultado a variable||Variável|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Abrir Arquivo
   
@@ -37,7 +33,7 @@ Abre um arquivo
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção do arquivo|Abra o arquivo do direção especificado|C:/User/Usuario/Folder/File.extension|
-|Asignar resultado a variable||Variável|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Selecione o arquivo
   
@@ -58,17 +54,18 @@ Peça ao usuário para selecionar uma pasta
 Pede ao usuário para selecionar uma pasta para renomear
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Direção da pasta a cambiar|Ao executar, a pasta que especificamos é renomeada|C:/User/Folder/|
-|Nuevo nome da pasta||Nuevo nome|
-|Asignar resultado a variable||Variável|
+|Direção da pasta a cambiar |Ao executar, a pasta que especificamos é renomeada|C:/User/Folder/|
+|Nuevo nome da pasta|Nome da pasta sem o caminho|Nuevo nome|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Ler arquivo
   
 Ler um arquivo e salvar seu conteúdo em uma variável
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
-|Direção do arquivo||C:/Users/User/Desktop/file.txt|
-|Separar cada linha|Retorna o conteúdo de um arquivo e armazena em uma variável, se a opção linhas separadas estiver marcada, retorna o conteúdo do arquivo dentro de uma lista e cada linha é um elemento dentro da lista||
+|Direção do arquivo|Direção do arquivo a ler|C:/Users/User/Desktop/file.txt|
+|Codificação|Codificação do arquivo a ler. Ex latin-1, utf-8, etc|latin-1|
+|Separar cada linha|Retorna o conteúdo de um arquivo e armazena em uma variável, se a opção linhas separadas estiver marcada, retorna o conteúdo do arquivo dentro de uma lista e cada linha é um elemento dentro da lista|True|
 |Atribuir resultado à variável|Variável onde o valor obtido será armazenado|Variável|
 
 ### Elimina una carpeta
@@ -77,7 +74,7 @@ Excluir uma pasta
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção da pasta|Seleciona a direção da pasta que deseja remover|C:/User/Usuario/Folder/|
-|Asignar resultado a variable||Variável|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Excluir um arquivo
   
@@ -86,7 +83,7 @@ Excluir um arquivo indicando sua extensão e seu nome ou parte do nome
 | --- | --- | --- |
 |Direção da pasta|Direção do arquivo a ser removido|C:/User/Usuario/Folder/|
 |Tipo do arquivo a eliminar|Nome e extension do arquivo a ser removido|nome*.pdf|
-|Asignar resultado a variable||Variável|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Criar Pasta
   
@@ -94,7 +91,7 @@ Digite a direção e o nome onde você deseja criar a pasta
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção e nome da pasta|Direção onde se creara à pasta|C:/Users/User/Desktop/folder_test|
-|Asignar resultado a variable||Variável|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Provar a existência
   
@@ -102,7 +99,7 @@ Verifique se existe um arquivo ou pasta
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção da pasta|Direção da pasta que você deseja verificar a existência|C:/User/Usuario/Folder/|
-|Asignar resultado a variable||Variável|
+|Asignar resultado a variable|Variável onde o resultado será armazenado|Variável|
 
 ### Listar arquivos ordenados
   
@@ -110,7 +107,7 @@ Listar archivos y selecciona el orden
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção da pasta|Direção da pasta da qual se deseja listar os arquivos|C:/User/Usuario/Folder/|
-|Organizar por|Opções para encomendar, Nome, Data e Tipo||
+|Organizar por|Opções para encomendar, Nome, Data e Tipo|Name|
 |Atribuir resultado à variável|Variável onde a lista de itens da pasta está armazenada|Variável|
 
 ### Achar arquivo
@@ -129,8 +126,16 @@ Obtém metadados do arquivo como: Nome, data de modificação, data de criação
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção de arquivo |Direção onde os arquivos desejados serão pesquisados|C:/User/Usuario/Folder/|
-|Selecionar metadados|Opções para obter todos ou um determinado metadados||
+|Selecionar metadados|Opções para obter todos ou um determinado metadados|Todos|
 |Selecionar unidade|Retorna o peso do arquivo na medida especificada|KB, MB o GB|
 |Filtrar por nome|Palavra que queremos pesquisar no nome do arquivo|.fileTest|
 |Filtrar por extensão|Extensão que queremos procurar nos arquivos|.pdf|
 |Atribuir resultado à variável|Variável onde os arquivos encontrados são armazenados|Variável|
+
+### Excluir conteúdo da pasta
+  
+Exclui todo o conteúdo de uma pasta
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Direção da pasta|Caminho da pasta do qual o conteúdo será excluído|C:/User/Usuario/Folder/|
+|Atribuir resultado à variável|Variável onde o resultado da operação será armazenado|Variável|

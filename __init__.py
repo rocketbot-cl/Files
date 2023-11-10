@@ -269,13 +269,14 @@ try:
     
     if module == "readFile":
         file_ = GetParams('file_')
+        encoding = GetParams('encoding') if GetParams('encoding') else 'latin-1'
         split = GetParams("split")
         var_ = GetParams('var_')
-    
+
         try:
             if split is not None:
                 split = eval(split)
-            with open(file_, 'r', encoding="latin-1") as f:
+            with open(file_, 'r', encoding=encoding) as f:
                 if split:
                     output = f.readlines()
                 else:
@@ -560,6 +561,20 @@ try:
                     res.append({"modificado":f"  {date_modified}"})
                         
         SetVar(result_, res)
+
+
+    if module == "delete_folder_content":
+        path = GetParams('path')
+        result = GetParams('result_')
+    
+        try:
+            shutil.rmtree(path)
+            os.mkdir(path)
+            SetVar(result, True)
+        except Exception as e:
+            SetVar(result, False)
+            PrintException()
+            raise e
         
 except Exception as e:
    PrintException()

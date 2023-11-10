@@ -1,7 +1,3 @@
-
-
-
-
 # Files
   
 Manage your files and folders, open and read files, control their existence and get their meta data.  
@@ -55,7 +51,10 @@ CList files and select sort
 Returns a list with matches
 
 13. Get Metadata  
-Obtains file metadata such as: Name, modification date, creation date and file weight.  
+Obtains file metadata such as: Name, modification date, creation date and file weight.
+
+14. Delete folder contents  
+Deletes all the contents of a folder  
 
 
 

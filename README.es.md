@@ -1,7 +1,3 @@
-
-
-
-
 # Archivos
   
 Administra tus archivos y carpetas, abre y lee archivos, controla su existencia y obten sus meta datos.  
@@ -55,7 +51,10 @@ Lista archivos y selecciona el orden
 Devuelve una lista con coincidencias
 
 13. Obtener Metadatos  
-Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.  
+Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.
+
+14. Eliminar contenido de carpeta  
+Elimina todo el contenido de una carpeta  
 
 
 

@@ -1,7 +1,3 @@
-
-
-
-
 # Arquivos
   
 Gerencie seus arquivos e pastas, abra e leia arquivos, controle sua existência e obtenha seus metadados.  
@@ -55,7 +51,10 @@ Listar archivos y selecciona el orden
 Retorna uma lista com correspondências
 
 13. Obter metadados  
-Obtém metadados do arquivo como: Nome, data de modificação, data de criação e peso do arquivo.  
+Obtém metadados do arquivo como: Nome, data de modificação, data de criação e peso do arquivo.
+
+14. Excluir conteúdo da pasta  
+Exclui todo o conteúdo de uma pasta  
 
 
 
