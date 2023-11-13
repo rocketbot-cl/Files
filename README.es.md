@@ -30,7 +30,7 @@ Pide al usuario seleccionar una carpeta
 Pide al usuario seleccionar una carpeta para cambiarle el nombre
 
 6. Leer archivo  
-Lee un archivo y guarda su contenido en una variable
+Lee un archivo de texto plano y guarda su contenido en una variable
 
 7. Elimina una carpeta  
 Elimina una carpeta con todos sus archivos

@@ -30,7 +30,7 @@ Ask the user to select a folder
 Ask the user to select a folder to rename it
 
 6. Read file  
-Read a file and save its content in a variable
+Reads a plain text file and saves its contents in a variable
 
 7. Delete folder  
 Delete a folder with all files

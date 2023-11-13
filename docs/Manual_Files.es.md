@@ -61,7 +61,7 @@ Pide al usuario seleccionar una carpeta para cambiarle el nombre
 
 ### Leer archivo
   
-Lee un archivo y guarda su contenido en una variable
+Lee un archivo de texto plano y guarda su contenido en una variable
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de archivo|Ruta del archivo a leer|C:/Users/User/Desktop/file.txt|

@@ -30,7 +30,7 @@ Peça ao usuário para selecionar uma pasta
 Pede ao usuário para selecionar uma pasta para renomear
 
 6. Ler arquivo  
-Ler um arquivo e salvar seu conteúdo em uma variável
+Ler um arquivo de texto simples e salva seu conteúdo em uma variável
 
 7. Elimina una carpeta  
 Excluir uma pasta

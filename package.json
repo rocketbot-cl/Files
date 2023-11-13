@@ -426,19 +426,19 @@
     {
       "es": {
         "title": "Leer archivo",
-        "description": "Lee un archivo y guarda su contenido en una variable",
+        "description": "Lee un archivo de texto plano y guarda su contenido en una variable",
         "title_options": null,
         "options": null
       },
       "en": {
         "title": "Read file",
-        "description": "Read a file and save its content in a variable",
+        "description": "Reads a plain text file and saves its contents in a variable",
         "title_options": null,
         "options": null
       },
       "pr": {
         "title": "Ler arquivo",
-        "description": "Ler um arquivo e salvar seu conteúdo em uma variável",
+        "description": "Ler um arquivo de texto simples e salva seu conteúdo em uma variável",
         "title_options": null,
         "options": null
       },

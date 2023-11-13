@@ -60,7 +60,7 @@ Pede ao usuário para selecionar uma pasta para renomear
 
 ### Ler arquivo
   
-Ler um arquivo e salvar seu conteúdo em uma variável
+Ler um arquivo de texto simples e salva seu conteúdo em uma variável
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção do arquivo|Direção do arquivo a ler|C:/Users/User/Desktop/file.txt|

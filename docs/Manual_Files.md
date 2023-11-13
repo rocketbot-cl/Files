@@ -59,7 +59,7 @@ Ask the user to select a folder to rename it
 
 ### Read file
   
-Read a file and save its content in a variable
+Reads a plain text file and saves its contents in a variable
 |Parameters|Description|example|
 | --- | --- | --- |
 |File path|Path of the file to read|C:/Users/User/Desktop/file.txt|
