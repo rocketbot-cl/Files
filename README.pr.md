@@ -1,7 +1,3 @@
-
-
-
-
 # Arquivos
   
 Gerencie seus arquivos e pastas, abra e leia arquivos, controle sua existência e obtenha seus metadados.  
@@ -34,7 +30,7 @@ Peça ao usuário para selecionar uma pasta
 Pede ao usuário para selecionar uma pasta para renomear
 
 6. Ler arquivo  
-Ler um arquivo e salvar seu conteúdo em uma variável
+Ler um arquivo de texto simples e salva seu conteúdo em uma variável
 
 7. Elimina una carpeta  
 Excluir uma pasta
@@ -55,7 +51,10 @@ Listar archivos y selecciona el orden
 Retorna uma lista com correspondências
 
 13. Obter metadados  
-Obtém metadados do arquivo como: Nome, data de modificação, data de criação e peso do arquivo.  
+Obtém metadados do arquivo como: Nome, data de modificação, data de criação e peso do arquivo.
+
+14. Excluir conteúdo da pasta  
+Exclui todo o conteúdo de uma pasta  
 
 
 

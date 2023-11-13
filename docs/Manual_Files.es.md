@@ -1,7 +1,3 @@
-
-
-
-
 # Archivos
   
 Administra tus archivos y carpetas, abre y lee archivos, controla su existencia y obten sus meta datos.  
@@ -30,7 +26,7 @@ Abre la carpeta contenedora de un archivo
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de la carpeta |Abre la carpeta de la ruta especificada|C:/User/Usuario/Folder/|
-|Asignar resultado a variable||Variable|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Abrir Archivo
   
@@ -38,7 +34,7 @@ Abre un archivo
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta del archivo |Abre el archivo de la ruta especificada|C:/User/Usuario/Folder/File.extension|
-|Asignar resultado a variable||Variable|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Seleccionar archivo
   
@@ -60,16 +56,17 @@ Pide al usuario seleccionar una carpeta para cambiarle el nombre
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Direção da pasta a renomear |Al ejecutar se renombra la carpeta que hayamos especificado|C:/User/Folder/|
-|Nuevo nombre de la carpeta||Nuevo nombre|
-|Asignar resultado a variable||Variable|
+|Nuevo nombre de la carpeta|Nombre de la carpeta sin la ruta|Nuevo nombre|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Leer archivo
   
-Lee un archivo y guarda su contenido en una variable
+Lee un archivo de texto plano y guarda su contenido en una variable
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
-|Ruta de archivo||C:/Users/User/Desktop/file.txt|
-|Separar cada línea|Devuelve el contenido de un archivo y lo almacena en una varibale, si se tilda la opcion separar lineas devuelve el contenido del archivo dentro de una lista y cada linea es un elemento dentro de la lista||
+|Ruta de archivo|Ruta del archivo a leer|C:/Users/User/Desktop/file.txt|
+|Codificación|Codificación del archivo a leer. Ej latin-1, utf-8, etc|latin-1|
+|Separar cada línea|Devuelve el contenido de un archivo y lo almacena en una varibale, si se tilda la opcion separar lineas devuelve el contenido del archivo dentro de una lista y cada linea es un elemento dentro de la lista|True|
 |Asignar resultado a variable|Variable donde se almacenara el valor obtenido|Variable|
 
 ### Elimina una carpeta
@@ -78,7 +75,7 @@ Elimina una carpeta con todos sus archivos
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de la carpeta |Selecciona la ruta de la carpeta a eliminar|C:/User/Usuario/Folder/|
-|Asignar resultado a variable||Variable|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Elimina un archivo
   
@@ -87,7 +84,7 @@ Elimina un archivo indicando su extensión y su nombre o parte del nombre
 | --- | --- | --- |
 |Ruta de la carpeta |Ruta del archivo a eliminar|C:/User/Usuario/Folder/|
 |Tipo de archivo a eliminar|Nombre y extension del archivo a eliminar|nombre*.pdf|
-|Asignar resultado a variable||Variable|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Crear Carpeta
   
@@ -95,7 +92,7 @@ Ingrese la ruta y nombre donde quiere crear la carpeta
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta y nombre de carpeta|Ruta donde se creara la carpeta|C:/Users/User/Desktop/folder_test|
-|Asignar resultado a variable||Variable|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Comprobar existencia
   
@@ -103,7 +100,7 @@ Comprueba si existe un archivo o carpeta
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de la carpeta |Direccion de la carpeta a la que se desea comprobar la existencia|C:/User/Usuario/Folder/|
-|Asignar resultado a variable||Variable|
+|Asignar resultado a variable|Variable donde se almacenará el resultado|Variable|
 
 ### Listar archivos ordenados
   
@@ -111,7 +108,7 @@ Lista archivos y selecciona el orden
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de la carpeta |Direccion de la carpeta de la cual se quiere listar los archivos|C:/User/Usuario/Folder/|
-|Ordenar por |Opciones para ordenar, Nombre, Fecha y Tipo||
+|Ordenar por |Opciones para ordenar, Nombre, Fecha y Tipo|Name|
 |Asignar resultado a variable|Variable donde se almacena la lista de elementos de la carpeta|Variable|
 
 ### Buscar Archivo
@@ -130,8 +127,16 @@ Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de los archivos |Direccion donde se buscaran los archivos deseados|C:/User/Usuario/Folder/|
-|Seleccionar Metadato|Opciones para obtener todos o un determinado metadato||
+|Seleccionar Metadato|Opciones para obtener todos o un determinado metadato|Todos|
 |Seleccionar unidad|Devuelve el peso el archivo en la medida especificada|KB, MB o GB|
 |Filtrar por nombre|Palabra que deseamos buscar en el nombre del archivo|fileTest|
 |Filtrar por extensión|Extension que desamos buscar en los archivos|.pdf|
 |Asignar resultado a variable|Variable donde se almacenaran los archivos encontrados|Variable|
+
+### Eliminar contenido de carpeta
+  
+Elimina todo el contenido de una carpeta
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Ruta de la carpeta |Ruta de la carpeta de la cual se eliminara el contenido|C:/User/Usuario/Folder/|
+|Asignar resultado a variable|Variable donde se almacenara el resultado de la operacion|Variable|

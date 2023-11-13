@@ -1,7 +1,3 @@
-
-
-
-
 # Archivos
   
 Administra tus archivos y carpetas, abre y lee archivos, controla su existencia y obten sus meta datos.  
@@ -34,7 +30,7 @@ Pide al usuario seleccionar una carpeta
 Pide al usuario seleccionar una carpeta para cambiarle el nombre
 
 6. Leer archivo  
-Lee un archivo y guarda su contenido en una variable
+Lee un archivo de texto plano y guarda su contenido en una variable
 
 7. Elimina una carpeta  
 Elimina una carpeta con todos sus archivos
@@ -55,7 +51,10 @@ Lista archivos y selecciona el orden
 Devuelve una lista con coincidencias
 
 13. Obtener Metadatos  
-Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.  
+Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.
+
+14. Eliminar contenido de carpeta  
+Elimina todo el contenido de una carpeta  
 
 
 

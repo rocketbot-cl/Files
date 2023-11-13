@@ -1,7 +1,3 @@
-
-
-
-
 # Files
   
 Manage your files and folders, open and read files, control their existence and get their meta data.  
@@ -34,7 +30,7 @@ Ask the user to select a folder
 Ask the user to select a folder to rename it
 
 6. Read file  
-Read a file and save its content in a variable
+Reads a plain text file and saves its contents in a variable
 
 7. Delete folder  
 Delete a folder with all files
@@ -55,7 +51,10 @@ CList files and select sort
 Returns a list with matches
 
 13. Get Metadata  
-Obtains file metadata such as: Name, modification date, creation date and file weight.  
+Obtains file metadata such as: Name, modification date, creation date and file weight.
+
+14. Delete folder contents  
+Deletes all the contents of a folder  
 
 
 
