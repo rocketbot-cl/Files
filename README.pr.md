@@ -1,3 +1,7 @@
+
+
+
+
 # Arquivos
   
 Gerencie seus arquivos e pastas, abra e leia arquivos, controle sua existência e obtenha seus metadados.  
@@ -54,7 +58,13 @@ Retorna uma lista com correspondências
 Obtém metadados do arquivo como: Nome, data de modificação, data de criação e peso do arquivo.
 
 14. Excluir conteúdo da pasta  
-Exclui todo o conteúdo de uma pasta  
+Exclui todo o conteúdo de uma pasta
+
+15. Copiar/Pegar pasta  
+Copia toda ou o conteúdo de uma pasta
+
+16. Copiar/Pegar conteúdo  
+Copia todo o conteúdo de uma pasta sem a pasta raíz  
 
 
 

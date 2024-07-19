@@ -1,3 +1,7 @@
+
+
+
+
 # Files
   
 Manage your files and folders, open and read files, control their existence and get their meta data.  
@@ -137,4 +141,22 @@ Deletes all the contents of a folder
 |Parameters|Description|example|
 | --- | --- | --- |
 |File path |Path of the folder from which the content will be deleted|C:/User/Usuario/Folder/|
+|Assign result to variable|Variable where the result of the operation will be stored|Variable|
+
+### Copy/Paste folder
+  
+Copies the folder including all its content
+|Parameters|Description|example|
+| --- | --- | --- |
+|File path to copy |Path of the folder to copy|C:/User/Usuario/Folder/|
+|File path to paste |Path of the folder to paste|C:/User/Usuario/Folder/|
+|Assign result to variable|Variable where the result of the operation will be stored|Variable|
+
+### Copy/Paste contents
+  
+Copies the contents of a folder without the root folder
+|Parameters|Description|example|
+| --- | --- | --- |
+|File path to copy |Path of the folder to copy|C:/User/Usuario/Folder/|
+|File path to paste |Path of the folder to paste|C:/User/Usuario/Folder/|
 |Assign result to variable|Variable where the result of the operation will be stored|Variable|
