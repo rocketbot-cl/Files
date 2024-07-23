@@ -1,3 +1,7 @@
+
+
+
+
 # Arquivos
   
 Gerencie seus arquivos e pastas, abra e leia arquivos, controle sua existência e obtenha seus metadados.  
@@ -138,4 +142,22 @@ Exclui todo o conteúdo de uma pasta
 |Parâmetros|Descrição|exemplo|
 | --- | --- | --- |
 |Direção da pasta|Caminho da pasta do qual o conteúdo será excluído|C:/User/Usuario/Folder/|
+|Atribuir resultado à variável|Variável onde o resultado da operação será armazenado|Variável|
+
+### Copiar/Pegar pasta
+  
+Copia toda ou o conteúdo de uma pasta
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Direção da pasta a ser copiada |Direção da pasta a ser copiada|C:/User/Usuario/Folder/|
+|Direção da pasta a ser colada |Direção da pasta a ser colada|C:/User/Usuario/Folder/|
+|Atribuir resultado à variável|Variável onde o resultado da operação será armazenado|Variável|
+
+### Copiar/Pegar conteúdo
+  
+Copia todo o conteúdo de uma pasta sem a pasta raíz
+|Parâmetros|Descrição|exemplo|
+| --- | --- | --- |
+|Direção da pasta a ser copiada |Direção da pasta a ser copiada|C:/User/Usuario/Folder/|
+|Direção da pasta a ser colada |Direção da pasta a ser colada|C:/User/Usuario/Folder/|
 |Atribuir resultado à variável|Variável onde o resultado da operação será armazenado|Variável|

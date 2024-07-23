@@ -1,3 +1,7 @@
+
+
+
+
 # Archivos
   
 Administra tus archivos y carpetas, abre y lee archivos, controla su existencia y obten sus meta datos.  
@@ -139,4 +143,22 @@ Elimina todo el contenido de una carpeta
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
 |Ruta de la carpeta |Ruta de la carpeta de la cual se eliminara el contenido|C:/User/Usuario/Folder/|
+|Asignar resultado a variable|Variable donde se almacenara el resultado de la operacion|Variable|
+
+### Copiar/Pegar directorio
+  
+Copia la carpeta incluyendo todo su contenido
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Ruta de la carpeta a copiar |Ruta del directorio a copiar|C:/User/Usuario/Folder/|
+|Ruta donde se copiará |Ruta del directorio a pegar|C:/User/Usuario/Folder/|
+|Asignar resultado a variable|Variable donde se almacenara el resultado de la operacion|Variable|
+
+### Copiar/Pegar contenido
+  
+Copia todo el contenido de un directorio sin la carpeta raíz
+|Parámetros|Descripción|ejemplo|
+| --- | --- | --- |
+|Ruta de la carpeta a copiar |Ruta del directorio a copiar|C:/User/Usuario/Folder/|
+|Ruta donde se copiará |Ruta del directorio a pegar|C:/User/Usuario/Folder/|
 |Asignar resultado a variable|Variable donde se almacenara el resultado de la operacion|Variable|

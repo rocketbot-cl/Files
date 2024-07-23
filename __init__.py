@@ -575,6 +575,32 @@ try:
             SetVar(result, False)
             PrintException()
             raise e
+    
+    if module == "copy_folder":
+        path = GetParams('path')
+        path2 = GetParams('path2')
+        result = GetParams('result_')
+        try:
+            nombre_directorio = os.path.basename(os.path.normpath(path))
+            nuevo_destino = os.path.join(path2, nombre_directorio)
+            shutil.copytree(path, nuevo_destino, dirs_exist_ok=True, ignore_dangling_symlinks=True)
+            SetVar(result, True)
+        except Exception as e:
+            SetVar(result, False)
+            PrintException()
+            raise e
+
+    if module == "copy_content_folder":
+        path = GetParams('path')
+        path2 = GetParams('path2')
+        result = GetParams('result_')
+        try:
+            shutil.copytree(path, path2, dirs_exist_ok=True, ignore_dangling_symlinks=True)
+            SetVar(result, True)
+        except Exception as e:
+            SetVar(result, False)
+            PrintException()
+            raise e
         
 except Exception as e:
    PrintException()

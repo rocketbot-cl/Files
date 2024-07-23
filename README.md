@@ -1,3 +1,7 @@
+
+
+
+
 # Files
   
 Manage your files and folders, open and read files, control their existence and get their meta data.  
@@ -54,7 +58,13 @@ Returns a list with matches
 Obtains file metadata such as: Name, modification date, creation date and file weight.
 
 14. Delete folder contents  
-Deletes all the contents of a folder  
+Deletes all the contents of a folder
+
+15. Copy/Paste folder  
+Copies the folder including all its content
+
+16. Copy/Paste contents  
+Copies the contents of a folder without the root folder  
 
 
 

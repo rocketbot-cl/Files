@@ -1,3 +1,7 @@
+
+
+
+
 # Archivos
   
 Administra tus archivos y carpetas, abre y lee archivos, controla su existencia y obten sus meta datos.  
@@ -54,7 +58,13 @@ Devuelve una lista con coincidencias
 Obtiene los metadatos de archivos como: Nombre, fecha de modificación, fecha de creación  y peso del archivo.
 
 14. Eliminar contenido de carpeta  
-Elimina todo el contenido de una carpeta  
+Elimina todo el contenido de una carpeta
+
+15. Copiar/Pegar directorio  
+Copia la carpeta incluyendo todo su contenido
+
+16. Copiar/Pegar contenido  
+Copia todo el contenido de un directorio sin la carpeta raíz  
 
 
 
