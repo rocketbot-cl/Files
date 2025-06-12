@@ -285,7 +285,7 @@ try:
             SetVar(var_, output)
     
         except Exception as e:
-            SetVar(result, False)
+            SetVar(var_, False)
             PrintException()
             raise e
     
