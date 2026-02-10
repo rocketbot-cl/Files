@@ -386,18 +386,23 @@ try:
     
         
         list_ext = []
-    
+        
+        #files_in_path = os.listdir(path)
+        
+        
         if ext_:
+            target_ext = ext_.lower()
             for file in os.listdir(path):
-                if file.endswith(ext_):
+                if file.lower().endswith(target_ext):
                     list_ext.append(file)
         else:
             list_ext = list_ext = os.listdir(path)
     
         res = []
         if match:
+            target_match = match.lower()
             for ele in list_ext:
-                if match in ele:
+                if target_match in ele.lower():
                     res.append(ele)
         else:
             res = list_ext
